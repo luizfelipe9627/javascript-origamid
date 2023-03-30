@@ -23,3 +23,20 @@ let testeNaN = 'Isso é 100' / 2;
 console.log(testeNaN);
 // O isNaN é uma função que verifica se algo é NaN ou não.
 console.log(isNaN(testeNaN));
+
+// No JavaScript tem uma ordem em que os operadores são executados primeiro vai a multiplicação, depois a divisão e por fim a soma.
+let ordemExecucao1 = 10 + 20 + 50 + 19 * 10 / 2;
+console.log(ordemExecucao1);
+// Para priorizar algum operador usamos os "()".
+let ordemExecucao2 = (10 + 20 + 50 + 19 * 10) / 2;
+console.log(ordemExecucao2);
+
+// O incremento ou decremento é usado para acrescentar/retirar um número do valor inicial.
+let incremento1 = 5;
+incremento1++;
+console.log(incremento1);
+
+// Podemos transformar uma sting em um number incrementando/retirando número do valor inicial
+let incremento2 = +'28';
+incremento2 = -5;
+console.log(incremento2);
