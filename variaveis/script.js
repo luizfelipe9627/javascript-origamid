@@ -34,13 +34,13 @@ time = "Santos";
 console.log(time);
 
 // Cria uma variável let com um valor único que não pode ser recriado.
-let signo = 'Cancer';
+let signo = "Cancer";
 // Irá dar erro pois já foi definido uma variável chamada cidade. Foi comentado para não dar erro no console.
 // let signo = 'Escorpião';
-console.log(signo)
+console.log(signo);
 
 // Podemos também criar uma variável constante que não pode ser recriada e nem ter seu valor alterado.
-const nacionalidade = 'Brasileiro';
+const nacionalidade = "Brasileiro";
 // Irá dar erro pois já foi definido um valor para essa variável. Foi comentado para não dar erro no console.
 // nacionalidade = 'Mexicano';
 console.log(nacionalidade);
