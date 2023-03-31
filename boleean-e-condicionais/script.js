@@ -23,8 +23,3 @@ if(nome) {
   console.log('Não existe nome.');
 }
 
-// Como o possuiMBA é falso, o operador lógico de negação("!") irá tornar para true, pois ele inverte os valores. Assim executando o comando dentro do if.
-if(!possuiMBA) {
-  console.log('Não possui MBA.');
-}
-// Para verificar se algo é true ou false podemos usar duas negações ("!!")
