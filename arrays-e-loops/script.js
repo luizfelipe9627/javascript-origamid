@@ -36,5 +36,16 @@ while (i < 15) {
 for (let i = 0; i < videoGames.length; i++) {
   // Irá executar o loop até a quantidade de propriedade da array terminar e mostrar cada propriedade no console.
   console.log(videoGames[i]);
+  // Faz uma verificação, se a propriedade na array for igual a PS4 ele irá quebrar o loop.
+  if (videoGames[i] === "PS4") {
+    // O break é responsável por quebrar o loop.
+    break;
+  }
 }
 
+var frutas = ["Banana", "Pera", "Maçã", "Abacaxi", "Uva"];
+// O forEach é um método responsável por fazer loops em arrays até não restar mais propriedades na array.
+// Ele pode receber 3 parâmetros, o primeiro que vai armazenar o nome/valor da propriedade da array, o segundo que é o index que vai armazenar o número/posição da propriedade na array e o terceiro que é a array, que vai retornar no caso a array completa.
+frutas.forEach(function (fruta, index, array) {
+  console.log(fruta, index, array);
+});
