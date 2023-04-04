@@ -3,7 +3,7 @@
   var cor = "preto";
   const marca = "Fiat";
   let portas = 4;
-
+  
   console.log(cor, marca, portas); // * Tem que ficar no mesmo bloco ou escopo.
 }
 
@@ -30,5 +30,4 @@ for (let numero = 0; numero < 10; numero++) {
 }
 
 const total = 10 * numero;
-
 console.log(total);

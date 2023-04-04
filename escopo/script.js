@@ -12,7 +12,6 @@ showCar(); // Está invocando a função.
 // console.log(carFusca); // Irá retornar "erro, car is not defined", a variável car está definida somente no escopo da função.
 
 let carFerrari = "Ferrari"; // Criado uma variável global, no caso vai ser reconhecida em qualquer tipo de escopo.
-
 console.log(carFerrari); // Agora irá mostrar no console pois está no escopo global.
 
 // * O porque não utilizar o VAR.
@@ -24,10 +23,10 @@ if (true) {
 
 console.log(month); // Irá funcionar também pois o var está ignorando o escopo que ele está.
 
-// * Variável const.
+// * Variável CONST.
 
 const week = "Friday";
-console.log(week);
+console.log(week); // Retorna Friday no console.
 
 // week = 'Saturday'; // Irá retornar erro pois o const não permite ter seu valor alterado.
 
@@ -43,15 +42,16 @@ const date = {
 date.year = 2022; // Funciona pois está alterando a propriedade do objeto e não o objeto em si.
 
 date.days = 31; // Também funciona pois está adicionando uma nova propriedade no objeto.
+
 // date = 'Uma string'; // Retorna erro pois está tentando alterar o objeto.
 
-console.log(date);
+console.log(date); // Retorna {year: 2024, month: "February"} no console.
 
-// * Variável let.
+// * Variável LET.
 
 let myYear; // Permite criar uma variável vazia.
 
-myYear = 2003; // Permite soobrescrever o valor da variável
+myYear = 2003; // Permite sobrescrever o valor da variável
 
 console.log(myYear); // 2003
 

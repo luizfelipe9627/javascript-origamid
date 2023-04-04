@@ -1,10 +1,9 @@
-// A string armazenada na variável já é um objeto pois usa propriedades ou métodos para armazenar uma string.
-let firstName = "Luiz";
+// * Tudo é objeto.
 
-// O toLowerCase() é uma função/método que deixa todas as letras em minusculas.
-let nameLowerCase = firstName.toLowerCase();
-console.log(nameLowerCase);
+let firstName = "Luiz"; // A string armazenada na variável já é um objeto pois usa propriedades ou métodos para armazenar uma string.
 
-// Usamos o document(objeto) e o querySelector(método/função) para selecionar um elemento HTML pelo JS utilizando a Classe ou ID atribuído ao elemento.
-let btn = document.querySelector(".btn");
-console.log(btn);
+let nameLowerCase = firstName.toLowerCase(); // O toLowerCase() é uma função/método que deixa todas as letras em minusculas.
+console.log(nameLowerCase); // Retorna luiz no console.
+
+let btn = document.querySelector(".btn"); // Usamos o document(objeto) e o querySelector(método/função) para selecionar um elemento HTML pelo JS utilizando a Classe ou ID atribuído ao elemento.
+console.log(btn); // Retorna <button class="btn">Clique aqui</button> no console.

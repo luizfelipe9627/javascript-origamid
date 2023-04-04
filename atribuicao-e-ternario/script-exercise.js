@@ -7,5 +7,5 @@ console.log(scrollNumber); // 1500
 let possuiCarro = true;
 let possuiCasa = true;
 let darCredito;
-darCredito = possuiCarro && possuiCasa; // Irá retornar true ou false por padrão do ternário já que não tem um se/senão.
+darCredito = possuiCarro && possuiCasa; // * Irá retornar true ou false por padrão do ternário já que não tem um se/senão.
 console.log(darCredito); // true

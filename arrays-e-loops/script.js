@@ -1,22 +1,32 @@
-// Criado uma array("[]"), chamada videoGames que contém 3 propriedades. A contagem em array começa do número 0 e não do 1.
-let videoGames = ["Switch", "PS4", "Xbox One S", "3DS"];
-console.log(videoGames);
-// Para acessar uma propriedade em especifico usamos os ("[]") e a posição da propriedade desejada.
-console.log(videoGames[1]); // PS4
+// * Array[].
 
-// O pop é um método/função que tira a ultima propriedade da array e retorna ela.
-let arrayPop = videoGames.pop();
-console.log(arrayPop); // 3DS
-// Agora a propriedade removida não está mais na array.
-console.log(videoGames);
+let videoGames = ["Switch", "PS4", "Xbox One S", "3DS"]; // Criado uma array("[]"), chamada videoGames que contém 3 propriedades. A contagem em array começa do número 0 e não do 1.
 
-// Temos o push que adiciona uma nova propriedade ao final da array.
-videoGames.push("PS5");
-console.log(videoGames);
+console.log(videoGames); // Retorna ["Switch", "PS4", "Xbox One S", "3DS"] no console.
 
-// Verifica quantas propriedades tem a array.
-let arrayLength = videoGames.length;
-console.log(arrayLength); // 4
+console.log(videoGames[1]); // Retorna PS4 no console. Para acessar uma propriedade em especifico usamos os ("[]") e a posição da propriedade desejada.
+
+// * Método pop().
+
+let arrayPop = videoGames.pop(); // O pop é um método/função que tira a ultima propriedade da array e retorna ela.
+
+console.log(arrayPop); // Retorna 3DS no console.
+
+console.log(videoGames); // Agora a propriedade removida não está mais na array.
+
+// * Método push().
+
+videoGames.push("PS5"); // Temos o push que adiciona uma nova propriedade ao final da array.
+
+console.log(videoGames); // Retorna ["Switch", "PS4", "Xbox One S", "3DS", "PS5"] no console.
+
+// * Propriedade length.
+
+let arrayLength = videoGames.length; // Verifica quantas propriedades tem a array.
+
+console.log(arrayLength); // Retorna 4 no console.
+
+// * For loop.
 
 // Dentro do for vai 3 parâmetros, o primeiro é o inicializador que é o número inicial que vai começar, o segundo é a condição para que o loop continue acontecendo e o terceiro e o quanto vai ser incrementado no inicializador a cada loop.
 for (let i = 0; i < 10; i++) {
@@ -24,12 +34,16 @@ for (let i = 0; i < 10; i++) {
   console.log(i); // Retorna de 0 a 9 no console.
 }
 
+// * While loop.
+
 let i = 0; // Inicializador.
 // Enquanto o inicializador(i) for menor que 10 ele irá continuar o loop.
 while (i < 15) {
   console.log(i); // Retorna de 0 a 14 no console.
   i = i + 2; // Acrescenta 2 no inicializador a cada loop.
 }
+
+// * For loop com array.
 
 // Está criando um loop que interage com uma array.
 // O length está pegando a quantidade de propriedades que a array tem.
@@ -42,6 +56,8 @@ for (let i = 0; i < videoGames.length; i++) {
     break;
   }
 }
+
+// * Método forEach().
 
 var frutas = ["Banana", "Pera", "Maçã", "Abacaxi", "Uva"];
 // O forEach é um método responsável por fazer loops em arrays até não restar mais propriedades na array.

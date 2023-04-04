@@ -1,5 +1,3 @@
-/* Exercício */
-
 // Declarar uma variável com o seu nome.
 let nome = "Luiz Felipe";
 
@@ -14,5 +12,4 @@ comidaFavorita = "Lasanha";
 
 // Declarar 5 variáveis diferentes sem valores.
 let cidade, cep, rua, numero, logradouro;
-
 console.log(nome, idade, comidaFavorita, cidade, cep, rua, numero, logradouro);
