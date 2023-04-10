@@ -1,0 +1,14 @@
+/* Global */
+@import url('./global/global.css');
+@import url('./global/reset.css');
+
+/* Fonte */
+@import url('./fonts/fonte.css');
+
+/* Sessões */
+@import url('./partials/header.css');
+@import url('./partials/animais.css');
+@import url('./partials/faq.css');
+@import url('./partials/numeros.css');
+@import url('./partials/contato.css');
+@import url('./partials/footer.css');
