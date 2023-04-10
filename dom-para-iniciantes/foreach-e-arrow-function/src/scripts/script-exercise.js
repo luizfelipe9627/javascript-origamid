@@ -1,13 +1,9 @@
 // Mostre no console cada parágrafo do site.
 const p = document.querySelectorAll("p");
-p.forEach((item) => {
-  console.log(item);
-});
+p.forEach((item) => console.log(item));
 
 // Mostre o texto dos parágrafos no console.
-p.forEach((item) => {
-  console.log(item.innerText);
-});
+p.forEach((item) => console.log(item.innerText));
 
 // Como corrigir os erros abaixo:
 const imgs = document.querySelectorAll("img");
