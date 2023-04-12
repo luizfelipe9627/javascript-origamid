@@ -59,9 +59,9 @@ for (let i = 0; i < videoGames.length; i++) {
 
 // * Método forEach().
 
-var frutas = ["Banana", "Pera", "Maçã", "Abacaxi", "Uva"];
+var fruits = ["Banana", "Pera", "Maçã", "Abacaxi", "Uva"];
 // O forEach é um método responsável por fazer loops em arrays até não restar mais propriedades na array.
 // Ele pode receber 3 parâmetros, o primeiro que vai armazenar o nome/valor da propriedade da array, o segundo que é o index que vai armazenar o número/posição da propriedade na array e o terceiro que é a array, que vai retornar no caso a array completa.
-frutas.forEach(function (fruta, index, array) {
+fruits.forEach(function (fruta, index, array) {
   console.log(fruta, index, array);
 });

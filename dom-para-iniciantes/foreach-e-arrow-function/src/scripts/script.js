@@ -10,13 +10,13 @@ imgs.forEach(function (item, index, array) {
   // console.log(array); // A array completa.
 });
 
-const titulos = document.getElementsByClassName("titulo"); // Retorna uma Array like.
-const titulosArray = Array.from(titulos); // O Array.from() é um método que transforma elementos em Array.
+const title = document.getElementsByClassName("titulo"); // Retorna uma Array like.
+const titleArray = Array.from(title); // O Array.from() é um método que transforma elementos em Array.
 
-console.log(titulos); // Retorna um Array like.
-console.log(titulosArray); // Retorna uma Array normal.
+console.log(title); // Retorna um Array like.
+console.log(titleArray); // Retorna uma Array normal.
 
-titulosArray.forEach(function (item) {
+titleArray.forEach(function (item) {
   console.log(item);
 });
 

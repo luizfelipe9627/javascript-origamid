@@ -4,12 +4,12 @@ const img = document.querySelector("img"); // Puxa o primeiro elemento IMG que e
 
 // o addEventListener é um método responsável por executar uma ação quando um evento é ocorrido. Geralmente recebe 2 parâmetros, o tipo de evento e o callback/função que vai ser executada quando o evento ocorrer.
 img.addEventListener("click", () => {
-  console.log("Clicou.");
+  // console.log("Clicou.");
 });
 
 // Criado uma função que vai ser usada quando o evento do addEventListener acontecer.
 function callback() {
-  console.log("Clicou na imagem.");
+  // console.log("Clicou na imagem.");
 }
 
 img.addEventListener("click", callback); // Callback é o nome função que vai ser executada quando o evento de mouse ocorrer.
@@ -26,7 +26,7 @@ function executarCallback(event) {
   const target = event.target; // Retorna o local onde o clique ocorreu.
   const type = event.type; // Retorna o tipo de evento.
 
-  console.log(currentTarget, target, type);
+  // console.log(currentTarget, target, type);
 }
 
 animalsList.addEventListener("click", executarCallback); // executarCallback é o nome função que vai ser executada quando o evento de click ocorrer.
@@ -36,16 +36,16 @@ animalsList.addEventListener("click", executarCallback); // executarCallback é 
 const h1 = document.querySelector("h1");
 
 function handleEvent(event) {
-  console.log(event.type, event); // Retorna no console o tipo de evento e o evento em si.
+  // console.log(event.type, event); // Retorna no console o tipo de evento e o evento em si.
 }
 
-h1.addEventListener("click", handleEvent); // Evento ocorre quando há clique.
-h1.addEventListener("mouseenter", handleEvent); // Evento ocorre ao passar o mouse por cima.
+// h1.addEventListener("click", handleEvent); // Evento ocorre quando há clique.
+// h1.addEventListener("mouseenter", handleEvent); // Evento ocorre ao passar o mouse por cima.
 // h1.addEventListener("mousemove", handleEvent); // Evento ocorre ao passar o mouse no elemento.
 
-window.addEventListener("scroll", handleEvent); // Evento ocorre quando há um scroll na página.
-window.addEventListener("resize", handleEvent); // Evento ocorre quando há alteração no tamanho da página.
-window.addEventListener("keydown", handleEvent); // Evento ocorre quando aperta qualquer tecla do teclado.
+// window.addEventListener("scroll", handleEvent); // Evento ocorre quando há um scroll na página.
+// window.addEventListener("resize", handleEvent); // Evento ocorre quando há alteração no tamanho da página.
+// window.addEventListener("keydown", handleEvent); // Evento ocorre quando aperta qualquer tecla do teclado.
 
 // * Evento keyboard do addEventListener.
 
@@ -86,3 +86,14 @@ function callbackThis() {
 menuLink.addEventListener("click", callbackThis);
 
 // * forEach em junção com eventos.
+
+const imgs = document.querySelectorAll("img"); // Está puxando todas as imagens presentes no DOM.
+
+function handleImg(event) {
+  console.log(event.currentTarget.getAttribute("src")); // Retorna o atributo src do local onde o clique ocorreu.
+}
+
+// Criado um forEach que percorre por todas as imagens do DOM, uma por uma.
+imgs.forEach((img) => {
+  img.addEventListener("click", handleImg); // / handleImg é o nome função que vai ser executada quando o evento de click ocorrer.
+});

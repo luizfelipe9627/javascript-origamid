@@ -1,25 +1,25 @@
 // Está criando duas variáveis que tem como valor um boolean.
-let possuiGraduacao = true;
-let possuiMBA = false;
+let hasFaculty = true;
+let hasMBA = false;
 
 // * Condicional If, Else e Else if.
 
 // Se o valor for true(verdadeiro) irá executar o primeiro bloco de comando.
-if (possuiGraduacao) {
-  console.log("Possui graduação.");
+if (hasFaculty) {
+  console.log("Possui faculdade.");
 } // O else if verifica se a condição anterior é false, se for ele verifica o else if, se não for true ele irá para o else.
-else if (possuiMBA) {
+else if (hasMBA) {
   console.log("Possui MBA.");
 } // Se for false ele ira executar o segundo bloco no c else.
 else {
-  console.log("Não possui nem graduação nem MBA.");
+  console.log("Não possui nem faculdade nem MBA.");
 }
 
-let nome = ""; // Caso a variável esteja vazia ela é false, se tiver algo ela é true.
+let myName = ""; // Caso a variável esteja vazia ela é false, se tiver algo ela é true.
 
 // Se nome existir então ele irá executar o comando dentro do if.
-if (nome) {
-  console.log(nome);
+if (myName) {
+  console.log(myName);
   // Caso contrario irá executar o comando dentro do else.
 } else {
   console.log("Não existe nome.");
@@ -65,30 +65,30 @@ console.log(diferenteNumber); // Irá retornar no console true pois eles são di
 let diferenteString = "Cachorro" !== "Cachorro"; // O operador lógico diferente("!==") diz por true ou false se o valor é diferente um do outro, restringindo o tipo.
 console.log(diferenteString); // Irá retornar no console false pois eles não são diferentes.
 
-let operadorAnd = 5 - 10 && 5 + 5; // O operador lógico and("&&") só retorna true caso os dois valores sejam verdadeiros, se algum ser false ele irá ignorar o true e vai retornar o false.
-if (operadorAnd) {
+let operatorAnd = 5 - 10 && 5 + 5; // O operador lógico and("&&") só retorna true caso os dois valores sejam verdadeiros, se algum ser false ele irá ignorar o true e vai retornar o false.
+if (operatorAnd) {
   console.log(
     "Verdadeiro, pois as duas condições são verdadeiras.",
-    operadorAnd
+    operatorAnd
   );
 } else {
-  console.log("Falso, pois nenhuma condição é verdadeira.", operadorAnd);
+  console.log("Falso, pois nenhuma condição é verdadeira.", operatorAnd);
 }
 
-var operadorOr = 5 - 5 || 5 + 5 || 10 - 2; // O operador lógico ou("||") só retorna true caso algum dos valores for true, se os dois for false ele irá retornar false.
-if (operadorOr) {
-  console.log("Verdadeiro, pois um dos valores é verdadeiro.", operadorOr);
+var operatorOr = 5 - 5 || 5 + 5 || 10 - 2; // O operador lógico ou("||") só retorna true caso algum dos valores for true, se os dois for false ele irá retornar false.
+if (operatorOr) {
+  console.log("Verdadeiro, pois um dos valores é verdadeiro.", operatorOr);
 } else {
-  console.log("Falso, pois nenhum número é verdadeiro.", operadorOr);
+  console.log("Falso, pois nenhum número é verdadeiro.", operatorOr);
 }
 
 // * Condicional Switch case.
 
-let corFavorita = "Azul";
+let favoriteColor = "Azul";
 // O switch case é usado para verificar se um valor é igual a uma das opções definidas, se for ele irá executar.
 // O break do case finaliza a execução do switch quando encontrado a resposta.
 // O default é acionado quando nenhuma das opções for verdadeira.
-switch (corFavorita) {
+switch (favoriteColor) {
   case "Azul":
     console.log("Olhe para o céu.");
     break;

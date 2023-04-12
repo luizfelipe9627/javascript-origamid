@@ -1,27 +1,27 @@
 // * Seletores de elementos.
 
-const animais = document.getElementById("animais"); // Retorna o elemento de ID nomeado como animais.
-console.log(animais);
+const animals = document.getElementById("animais"); // Retorna o elemento de ID nomeado como animais.
+console.log(animals);
 
-const primeiraLI = document.querySelector("li"); // Retorna o primeiro elemento com a tag LI.
-console.log(primeiraLI);
+const firstLI = document.querySelector("li"); // Retorna o primeiro elemento com a tag LI.
+console.log(firstLI);
 
 const gridSection = document.getElementsByClassName("grid-section"); // Retorna o elemento de Class nomeado como grid-section.
 console.log(gridSection);
 
-const primeiraUL = document.querySelector("ul"); // Retorna o primeiro elemento com a tag UL.
-console.log(primeiraUL);
+const firstUL = document.querySelector("ul"); // Retorna o primeiro elemento com a tag UL.
+console.log(firstUL);
 
-const linkInterno = document.querySelector('[href^="#"]'); // Retorna o primeiro elemento de link que começa(^) com hashtag(#);
-console.log(linkInterno);
+const linkIntern = document.querySelector('[href^="#"]'); // Retorna o primeiro elemento de link que começa(^) com hashtag(#);
+console.log(linkIntern);
 
-const animaisImg = document.querySelectorAll(".animais img"); // Retorna todos os elementos que contém a classe animais e por fim pega as tags img.
-console.log(animaisImg[0]);
+const animalsImg = document.querySelectorAll(".animais img"); // Retorna todos os elementos que contém a classe animais e por fim pega as tags img.
+console.log(animalsImg[0]);
 
 const gridSectionHTML = document.getElementsByClassName("grid-section"); // Já o getElementsByClassName é ao vivo, ou seja ele sempre irá puxar o elemento mesmo que ele tenha sido adicionado ou alterado.
 const gridSectionNode = document.querySelectorAll(".grid-section"); // O querySelectorAll é estático, ou seja, quando é adicionado ou modificado um elemento em seguida ele não irá puxar o elemento.
 
-primeiraUL.classList.add("grid-section"); // Adiciona uma classe ao elemento.
+firstUL.classList.add("grid-section"); // Adiciona uma classe ao elemento.
 
 console.log(gridSectionHTML); // Retornou 4 elementos, puxou a classe adicionada.
 console.log(gridSectionNode); // Retornou 3 elementos, não puxou a classe.
