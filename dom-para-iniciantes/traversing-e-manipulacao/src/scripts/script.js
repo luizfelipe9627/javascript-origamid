@@ -55,3 +55,15 @@ const listFirstChild = list.firstChild; // Retorna o primeiro node child.
 console.log(listFirstChild);
 
 // * Manipulando eventos.
+
+const animals = document.querySelector('.animais')
+const contact = document.querySelector('.contato'); // Está puxando o elemento com a classe contato.
+const contactTitle = contact.querySelector('.titulo'); // Está puxando o elemento com a classe titulo dentro do elemento com a classe contato no DOM.
+
+// const appendChild = animals.appendChild(contact); // O appendChild é um método que leva como último filho do elemento.
+// const insertBefore = contact.insertBefore(animals, contactTitle); // O insertBefore é um método que recebe dois valores, o primeiro é o que deseja ser movido e o segundo é o elemento que deve ser colocado antes. Nesse caso vai inserir animais antes do titulo animais.
+// const removeChild = contact.removeChild(contactTitle); // o removeChild é usado para remover um elemento filho do pai.
+// const replaceChild = contact.replaceChild(list, contactTitle); // o replaceChild é um método usado para substituir um elemento por outro.
+
+// * Criação de elementos.
+
