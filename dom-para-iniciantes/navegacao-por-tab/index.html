@@ -9,6 +9,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <!-- Se o usuário não estiver com o JavaScript habilitado irá aparecer toda a lista. -->
+  <script>
+    // Está falando com todo o HTML do site e através do className adicionando a classe JS.
+    document.documentElement.className += 'js';
+  </script>
+
   <link rel="stylesheet" href="./src/styles/style.css">
 
   <title>Animais Fantásticos</title>
@@ -28,7 +34,8 @@
   <section class="grid-section animais" id="animais">
     <h1 class="titulo">Animais Fantásticos</h1>
 
-    <ul class="animais-lista">
+    <!-- Adicionado a classe js-tabmenu para ser usada no JavaScript. -->
+    <ul class="animais-lista js-tabmenu">
       <li><img src="./src/assets/img/imagem1.jpg" alt="Raposa"></li>
       <li><img src="./src/assets/img/imagem2.jpg" alt="Esquilo"></li>
       <li><img src="./src/assets/img/imagem3.jpg" alt="Urso"></li>
@@ -37,7 +44,7 @@
       <li><img src="./src/assets/img/imagem6.jpg" alt="Leão"></li>
     </ul>
 
-    <div class="animais-descricao">
+    <div class="animais-descricao js-tabcontent">
       <section>
         <h2>Raposa</h2>
 

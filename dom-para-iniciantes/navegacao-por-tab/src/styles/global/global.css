@@ -7,18 +7,6 @@ body {
   grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
 }
 
-html.texto-maior {
-  font-size: 150%;
-}
-
-.azul {
-  background-color: teal;
-}
-
-.vermelho {
-  background-color: crimson;
-}
-
 .grid-section {
   grid-column: 2 / 4;
   width: 100%;

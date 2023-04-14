@@ -45,6 +45,10 @@
   grid-column: 2;
 }
 
+.animais-lista li {
+  cursor: pointer;
+}
+
 .animais-lista::-webkit-scrollbar {
   width: 18px;
 }
@@ -63,4 +67,16 @@
   .animais-lista {
     grid-column: 1;
   }
+}
+
+/* Por padrão faz as sections estarem escondidas. */
+.js .js-tabcontent section {
+  display: none;
+}
+
+/* Quando tiver a classe ativo na section irá mudar o estilo do elemento. */
+.js-tabcontent section.ativo {
+  display: block;
+  /* O forwards é usado para quando acontecer a animação ele continuar no fim da animação. */
+  animation: show .5s forwards;
 }
