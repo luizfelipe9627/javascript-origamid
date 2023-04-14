@@ -56,9 +56,10 @@ console.log(listFirstChild);
 
 // * Manipulando eventos.
 
-const animals = document.querySelector('.animais')
-const contact = document.querySelector('.contato'); // Está puxando o elemento com a classe contato.
-const contactTitle = contact.querySelector('.titulo'); // Está puxando o elemento com a classe titulo dentro do elemento com a classe contato no DOM.
+const animals = document.querySelector(".animais"); // Está puxando o elemento com a classe animais.
+const map = document.querySelector(".mapa"); // Está puxando o elemento com a classe mapa.
+const contact = document.querySelector(".contato"); // Está puxando o elemento com a classe contato.
+const contactTitle = contact.querySelector(".titulo"); // Está puxando o elemento com a classe titulo dentro do elemento com a classe contato no DOM.
 
 // const appendChild = animals.appendChild(contact); // O appendChild é um método que leva como último filho do elemento.
 // const insertBefore = contact.insertBefore(animals, contactTitle); // O insertBefore é um método que recebe dois valores, o primeiro é o que deseja ser movido e o segundo é o elemento que deve ser colocado antes. Nesse caso vai inserir animais antes do titulo animais.
@@ -67,3 +68,18 @@ const contactTitle = contact.querySelector('.titulo'); // Está puxando o elemen
 
 // * Criação de elementos.
 
+const newH1 = document.createElement("h1"); // o createElement é um método usado para criar novos elementos.
+
+newH1.innerText = "Novo titulo"; // Está adicionando um valor ao elemento H1 criado.
+
+newH1.classList.add("titulo"); // Adiciona uma classe ao novo elemento criado.
+
+map.appendChild(newH1); // Após o mapa adiciona o elemento H1 criado.
+
+// * Clonar elementos.
+
+const faq = document.querySelector(".faq"); // O querySelector está puxando o elemento com a classe faq.
+
+const cloneH1 = h1.cloneNode(true); // O cloneNode é responsável por clonar o elemento, dentro dele pode ser passado true ou false, true para pegar todo o texto do elemento até mesmo seus filhos e false para pegar somente o texto do elemento em si.
+
+faq.appendChild(cloneH1); // O appendChild é um método que leva como último filho do elemento.
