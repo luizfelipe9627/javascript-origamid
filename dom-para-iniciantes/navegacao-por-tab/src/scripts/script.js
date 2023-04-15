@@ -1,5 +1,5 @@
-const tabMenu = document.querySelectorAll(".js-tabmenu li");
-const tabContent = document.querySelectorAll(".js-tabcontent section");
+const tabMenu = document.querySelectorAll(".js-tabmenu li"); // Está puxando todos os elementos LI da classe js-tabmenu.
+const tabContent = document.querySelectorAll(".js-tabcontent section"); // Está puxando todos os elementos Section da classe js-tabcontent.
 
 // Se o tabMenu e o tabContent for true(no caso se não existir vai ser false pois retorna 0), então irá executar o escopo do if.
 if (tabMenu.length && tabContent.length) {
