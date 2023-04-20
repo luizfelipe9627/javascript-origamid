@@ -1,4 +1,4 @@
-//* Criando objetos.
+//* > Criando objetos.
 
 // Criado uma constante contendo um objeto chamado car.
 const car = {
@@ -14,7 +14,7 @@ honda.price = 4000; // Está modificando a propriedade price dentro do objeto ca
 console.log(honda); // Retorna o objeto car modificado com os novos valores.
 console.log(car); // Retorna o objeto com os mesmos valores do colocado no Honda.
 
-//* Usando constructor function para criar um novo objeto baseado no anterior sem modifica-lo.
+//* > Usando constructor function para criar um novo objeto baseado no anterior sem modifica-lo.
 
 // Em uma constructor function geralmente o nome da função começa sempre com letra maiúscula. As propriedades criadas dentro da função não podem ser acessadas ou alteradas a não ser que sejam parâmetros da função.
 function Car(brand, price) {
@@ -41,7 +41,7 @@ const mercedes = new Car("Mercedez", 5000); // Podemos atribuir novos valores ao
 
 console.log(mercedes); // Retorna o objeto Mercedes.
 
-//* this Keywork.
+//* > this Keywork.
 
 // Em uma constructor function geralmente o nome da função começa sempre com letra maiúscula. As propriedades criadas dentro da função não podem ser acessadas ou alteradas a não ser que sejam parâmetros da função.
 function Car2(brand, initialPrice) {

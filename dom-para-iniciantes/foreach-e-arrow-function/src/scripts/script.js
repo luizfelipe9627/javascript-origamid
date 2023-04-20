@@ -1,4 +1,4 @@
-//* forEach
+//* > forEach
 
 const imgs = document.querySelectorAll("img"); // Está puxando do DOM todos os elementos img presentes no site.
 
@@ -20,7 +20,7 @@ titleArray.forEach(function (item) {
   console.log(item);
 });
 
-//* Arrow function
+//* > Arrow function
 
 const links = document.querySelectorAll("a"); // Retorna uma Array like.
 const linksArray = Array.from(links); // O Array.from() é um método que transforma elementos em Array.
@@ -31,11 +31,11 @@ linksArray.forEach((item) => {
 });
 
 // Para o uso de uma única linha podemos utilizar sem os parênteses.
-linksArray.forEach(item => {
+linksArray.forEach((item) => {
   // console.log(item);
 });
 // Ou
-linksArray.forEach(item => console.log(item));
+linksArray.forEach((item) => console.log(item));
 // Quando não tem argumentos precisa ter os parênteses, mesmo que vazios.
 let inicializador = 0;
 linksArray.forEach(() => console.log(inicializador++));
