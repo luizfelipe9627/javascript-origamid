@@ -23,11 +23,10 @@ const transacoes = [
 ];
 
 // Retorne uma array com a lista abaixo
-const transportes = "Carro;Avião;Trem;Ônibus;Bicicleta";
+const transportes1 = "Carro;Avião;Trem;Ônibus;Bicicleta";
 
 // Substitua todos os span's por a's
-const html = 
-`<ul>
+const html = `<ul>
   <li><span>Sobre</span></li>
   <li><span>Produtos</span></li>
   <li><span>Contato</span></li>
@@ -37,7 +36,7 @@ const html =
 const frase = "Melhor do ano!";
 
 // Retorne o total de taxas
-const transacoes = [
+const transacoes2 = [
   "Taxa do Banco",
   "   TAXA DO PÃO",
   "  taxa do mercado",
