@@ -70,7 +70,7 @@ priceList.forEach((preco) => {
 });
 // o padStart é um método usado para aumentar caracteres a partir do inicio do elemento. Recebe dois parâmetros sendo o primeiro o quanto de caractere/numer/string/etc vai ser colocado e o segundo qual tipo de caractere vai ser acrescentado.(ele conta também o espaço ocupado pela string e por isso não completa os 10).
 console.log(priceList[0].padStart(10, ".")); // Retorna no console o primeiro elemento da Array seguido de 10 "." definidos no padStart.
-// o padEnd é um método usado para aumentar caracteres a partir do final do elemento. Recebe dois parâmetros sendo o primeiro o quanto de caractere/numer/string/etc vai ser colocado e o segundo qual tipo de caractere vai ser acrescentado(ele conta também o espaço ocupado pela string e por isso não completa os 10).
+// o padEnd é um método usado para aumentar caracteres a partir do final do elemento. Recebe dois parâmetros sendo o primeiro o quanto de caractere/number/string/etc vai ser colocado e o segundo qual tipo de caractere vai ser acrescentado(ele conta também o espaço ocupado pela string e por isso não completa os 10).
 console.log(priceList[0].padEnd(10, "."));
 
 // O repeat é um método usado para repetir uma string, no seu parâmetro recebe a quantidade de repetições a ser feita.
