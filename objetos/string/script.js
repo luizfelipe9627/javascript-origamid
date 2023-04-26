@@ -1,4 +1,4 @@
-//* Definindo e criando string.
+//* > Definindo e criando string.
 
 const food = "Pizza"; // Criado uma variável que armazena a string Pizza.
 console.log(food); // Retorna a string no console.
@@ -13,7 +13,7 @@ console.log(food.toLowerCase()); // Retorna a string com todas as letras em mai�
 // O toLowerCase é uma função usada para deixar todas as letras do elemento em minusculas.
 console.log(water.toUpperCase()); // Retorna a string com todas as letras em maiúsculas.
 
-//* Acessar o index de uma string.
+//* > Acessar o index de uma string.
 
 const phrase = "A melhor comida";
 console.log(phrase[0]); // Retorna "A" no console.
@@ -21,7 +21,7 @@ console.log(phrase[2]); // Retorna "m" no console.
 // Podemos usar o length para retornar sempre a última letra do elemento.
 console.log(phrase[phrase.length - 1]); // Retorna "a" no console.
 
-//* Métodos e propriedades de uma string.
+//* > Métodos e propriedades de uma string.
 
 // O length é uma propriedade usada para retornar quantas letras tem o valor(espaços também contam).
 console.log(food.length); // Retorna "5" no console.

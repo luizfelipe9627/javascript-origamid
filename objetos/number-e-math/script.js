@@ -1,11 +1,11 @@
-//* Definindo e criando number.
+//* > Definindo e criando number.
 
 const year = 2023; // Criado uma variável chamada year que armazena o number 2023.
 console.log(year); // Retorna o number no console.
 const day = new Number(23); // Cria um objeto do tipo construtor number que recebe o valor 23.
 console.log(day); // Retorna o objeto construtor no console.
 
-//* Métodos e propriedades de um number.
+//* > Métodos e propriedades de um number.
 
 // O isNaN é um método usado para verificar se o valor colocado dentro do seu parâmetro é NaN, retornando true ou false.
 console.log(Number.isNaN(NaN)); // Retorna true no console pois é um valor NaN.
@@ -51,7 +51,7 @@ console.log(
   price3.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
 ); // Retorna R$ 59,49 no console.)
 
-//* Objeto nativo Math.
+//* > Objeto nativo Math.
 
 // O PI é uma propriedade responsável por retornar o número de PI.
 console.log(Math.PI); // Retorna 3.141592653589793 no console.
