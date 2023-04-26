@@ -30,4 +30,3 @@ console.log((car[2] = "Ferrari")); // Está reescrevendo o valor de Honda para F
 console.log((car[10] = "Parati")); // Está criando no index 10 a string chamada Parati.
 
 console.log(car.length); // Retorna 3 no console, pois são apenas 3 elementos.
-// 11
