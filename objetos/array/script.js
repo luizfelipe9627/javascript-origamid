@@ -108,3 +108,16 @@ console.log(carBrand); // Retorna a array modificada, sendo assim sem o elemento
 // O método reverse é usado para inverter os itens da array e retorna a nova array.
 console.log(carBrand.reverse()); // Retorna no console a array com a ordem invertida.
 console.log(carBrand); // Retorna a array modificada, sendo assim ele invertido.
+
+//* > Método modificador splice.
+
+// O método splice é usado para adicionar valores na array a partir do seu index, também remove a quantidade de itens que for passada no segundo parâmetro e retorna eles.
+console.log(carBrand.splice(1, 0, 'Uno', 'Chevrolet')); // Adiciona os elementos a partir do index 1 e remove 0 elementos, retorna no console uma array vazia.
+console.log(carBrand); // Retorna no console os elementos adicionados a partir do index 1.
+
+console.log(carBrand.splice(3, 2, 'Uno', 'Chevrolet')); // Adiciona os elementos a partir do index 3 e remove 2 elementos da array, retorna os elementos da array no console.
+console.log(carBrand); // Retorna no console os elementos adicionados a partir do index 3 mas sem os elementos removidos.
+
+//* > Método modificador copyWithin.
+
+
