@@ -1,31 +1,39 @@
-//* > Definindo e criando number.
+//* > Objeto e valor number.
 
 const year = 2023; // Criado uma variável chamada year que armazena o number 2023.
 console.log(year); // Retorna o number no console.
 const day = new Number(23); // Cria um objeto do tipo construtor number que recebe o valor 23.
 console.log(day); // Retorna o objeto construtor no console.
 
-//* > Métodos e propriedades de um number.
+//* > Método isNaN.
 
 // O isNaN é um método usado para verificar se o valor colocado dentro do seu parâmetro é NaN, retornando true ou false.
 console.log(Number.isNaN(NaN)); // Retorna true no console pois é um valor NaN.
 console.log(Number.isNaN(5)); // Retorna false no console pois não é um valor NaN.
 console.log(Number.isNaN("teste")); // Retorna false no console pois não é um valor NaN.
 
+//* > Método isInteger.
+
 // O isInteger é um método usado para verificar se um valor é integral(sem valor decimal, sendo assim aceita somente números inteiros).
 console.log(Number.isInteger(10)); // Retorna true no console pois é um valor int.
 console.log(Number.isInteger(10.5)); // Retorna false no console pois é um valor float.
+
+//* > Método parseFloat.
 
 // O parseFloat é um método que transforma string em number quebrado(float).
 console.log(Number.parseFloat("99.50")); // Retorna 99.5 no console, mas sem o 0 pois ele não é um valor(quebrado no caso).
 console.log(Number.parseFloat("100 Reais")); // Retorna 100 no console.
 console.log(Number.parseFloat("R$ 100")); // Retorna NaN no console pois não reconhece caractere.
 
+//* > Método parseInt.
+
 // O parseInt é um método que transforma a string em number inteiro(int).
 // Obs.: É passado o valor 10 no segundo parâmetro para falar que são números decimais.
 console.log(Number.parseInt("99.50", 10)); // Retorna 99 no console.
 console.log(Number.parseInt(5.43434355555, 10)); // Retorna 5 no console.
 console.log(Number.parseInt("100 Reais", 10)); // Retorna 100 no console.
+
+//* > Método toFixed.
 
 // O toFixed é uma propriedade que arredonda o número com base no total de casas decimais do valor definido. Recebe um valor(opcional) como parâmetro que é quantas casas decimais vai ter.
 // Usamos o "+" para transformar uma string em um number.
@@ -38,9 +46,13 @@ console.log(+car.toFixed(2)); // Retorna 1000.46 no console.
 const price2 = 1499.49;
 console.log(+price2.toFixed()); // Retorna 1499 no console.
 
+//* > Método toString.
+
 // O toString transforma numbers em string. Use o valor 10 para o sistema decimal.
 const tel = 99999999;
 console.log(tel.toString(10));
+
+//* > Método toLocaleString.
 
 // O toLocaleString é um método usado para formatar o número de acordo com a lingua e opções passadas.
 const price3 = 59.49;
@@ -51,35 +63,52 @@ console.log(
   price3.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
 ); // Retorna R$ 59,49 no console.)
 
-//* > Objeto nativo Math.
+//* > Objeto nativo Math e sua propriedade PI.
 
 // O PI é uma propriedade responsável por retornar o número de PI.
 console.log(Math.PI); // Retorna 3.141592653589793 no console.
 
+//* > Objeto nativo Math e seu método abs.
+
 // O abs é um método responsável por retornar o número absoluto de um vaor.
 console.log(Math.abs(-5)); // Retorna no console o número absoluto(sendo assim sempre positivo) do valor definido.
+
+//* > Objeto nativo Math e seu método ceil.
 
 // O ceil é um método usado para arredondar um valor quebrado em inteiro(sempre para cima do valor inicial).
 console.log(Math.ceil(4.8334)); // Retorna 5 no console.
 console.log(Math.ceil(4.3)); // Retorna 5 no console.
 
+//* > Objeto nativo Math e seu método floor.
+
 // O floor é um método usado para arredondar um valor quebrado em inteiro(sempre para abaixo do valor inicial).
 console.log(Math.floor(4.8334)); // Retorna 4 no console.
 console.log(Math.floor(4.3)); // Retorna 4 no console.
+
+//* > Objeto nativo Math e seu método round.
 
 // O round é um método que segue o padrão da matemática, sendo assim ele arredonda para o valor mais próximo.
 console.log(Math.round(4.8334)); // Retorna 5 no console.
 console.log(Math.round(4.3)); // Retorna 4 no console.
 
+//* > Objeto nativo Math e seu método max.
+
 // O max é um método usado para retornar o maior valor passado.
 console.log(Math.max(5, 20, 30, 10)); // Retorna 30 no console.
 
-// O max é um método usado para retornar o menor valor passado.
+//* > Objeto nativo Math e seu método min.
+
+// O min é um método usado para retornar o menor valor passado.
 console.log(Math.min(5, 20, 30, 10)); // Retorna 5 no console.
+
+//* > Objeto nativo Math e seu método random.
 
 // O random é um método usado para criar valores aleatórios.
 console.log(Math.random()); // Retorna um número aleatório do tipo float no console.
 // Podemos usar o floor em conjunto com o random para criar um campo menor de aleatoriedade de número int.
+
+//* > Objeto nativo Math e seu método random junto com floor.
+
 console.log(Math.floor(Math.random() * 100)); // Retorna no console um número entre 0 a 100.
 console.log(Math.floor(Math.random() * 500)); // Retorna no console um número entre 0 a 500.
 // Ou podemos fazer colocando um número máximo menos o mínimo mais 1 e por fora dos parenteses somar com o mínimo novamente.
