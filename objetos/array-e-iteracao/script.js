@@ -87,11 +87,35 @@ const classes = [
   },
 ];
 
-const classTime = classes.map((course) => course.min); // O map está passando por cada item(nomeado como classes) do objeto e acessando e retornando(armazenando na variável) o item(nomeado como course).
+const classTime = classes.map((course) => course.min); // O map está passando por cada item(nomeado como classes) do objeto e acessando e retornando(armazenando na variável) a propriedade min do item(nomeado como course).
 console.log(classTime); // Mostra no console cada valor da propriedade min do objeto.
 
-const puxarNomes = (course) => course.name; // Criado uma função que tem um parâmetro chamado course, que retorna o parâmetro course acessando a propriedade nome do objeto.
+const puxarNomes = (course) => course.name; // Criado uma função em uma constante que tem um parâmetro chamado course, que retorna o item course passado pelo map assim acessando a propriedade name do objeto.
 const className = classes.map(puxarNomes); // O map está passando por cada item(nomeado como classes) do objeto e executa a função puxarNomes, que faz o item ser transferido para o parâmetro(course) da função.
 console.log(className); // MMostra no console cada valor da propriedade nome do objeto.
 
 //* > Método reduce.
+
+const classesMinutes = [10, 25, 30]; // Criado uma array chamada classesMinutes que contém 3 itens do tipo number.
+
+// O reduce é um método que executa a função de callback para cada item da Array. Um valor especial existe nessa função de callback, ele é chamado de acumulador, mas é na verdade apenas o retorno da iteração anterior.
+const reduceClasses = classesMinutes.reduce(
+  (acumulador, item, index, array) => {
+    // O acumulador pega o valor inicial(e após isso o anterior), o item pega o elemento atual que está percorrendo, o index pega a posição do item na array e por fim a array retorna a array original.
+    console.log(acumulador, item, index); // Mostra todos os valores no console.
+    return item + acumulador; // Retorna o item para não ficar undefined no console mais o valor do acumulador.
+  },
+  0 // Está definindo o valor inicial como 0(importante definir um valor se não pula a primeira iteração).
+); 
+console.log(reduceClasses); // Retorna a soma de cada acumulador e item no console.
+
+//* > Usando o reduce para retornar o maior número de uma array.
+
+const numbersList = [10, 25, 60, 5, 35, 10]; // Criado uma array chamada numbersList que contém 6 itens do tipo number.
+
+// O reduce passa por cada item
+const greaterValue = numbersList.reduce((anterior, atual) => {
+  return anterior < atual ? atual : anterior;
+});
+
+console.log(greaterValue); // Retorna 60 no console pois ele foi o maior número da array.
