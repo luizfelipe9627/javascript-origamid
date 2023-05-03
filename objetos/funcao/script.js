@@ -188,8 +188,8 @@ const honda = {
   brand: "Honda",
 };
 
-const acelerarHonda = newCar.acelerar.bind(honda); // Criado uma função chamada acelerarHonda que seleciona a função acelerar dentro do objeto newCar e utiliza o método bind para tornar o objeto honda o novo this a ser referenciado e não mais o objeto pai(newCar).
-console.log(acelerarHonda(200, 10)); // Retorna Honda acelerou 200 em 10 no console.
+const acelerarHonda = newCar.acelerar.bind(honda, "300"); // Criado uma função chamada acelerarHonda que seleciona a função acelerar dentro do objeto newCar e utiliza o método bind para tornar o objeto honda o novo this a ser referenciado e não mais o objeto pai(newCar). Como segundo valor podemos definir o valor do parâmetro da função.
+console.log(acelerarHonda(10)); // Retorna Honda acelerou 200 em 10 no console.
 
 //* Argumentos comuns.
 
