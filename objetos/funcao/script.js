@@ -1,4 +1,4 @@
-//* > Introdução a function.
+//* > Introdução a constructor function.
 
 // Criado uma função chamada squareArea que contém um parâmetro chamado side.
 function squareArea(side) {

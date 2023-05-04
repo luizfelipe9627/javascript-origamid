@@ -1,4 +1,4 @@
-//* > Introdução a arrays.
+//* > Introdução a construtor array.
 
 const citys = ["São Paulo", "Rio de Janeiro", "Ribeirão Preto"]; // Criado uma array contendo 3 elementos do tipo string.
 console.log(citys); // Retorna a array no console.
