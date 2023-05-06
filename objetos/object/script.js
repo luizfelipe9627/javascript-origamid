@@ -122,18 +122,141 @@ console.log(train.speed); // Retorna no console uma string concatenado com o val
 
 //* > Método getOwnPropertyDescriptors.
 
+// O método getOwnPropertyDescriptors lista todos os métodos e propriedades de um objeto, com as suas devidas configurações.
+console.log(Object.getOwnPropertyDescriptors(Array)); // Mostra no console uma lista com métodos e propriedades de um Object Construtor Array.
+
+console.log(Object.getOwnPropertyDescriptors(Array.prototype)); // Mostra no console uma lista com métodos e propriedades do protótipo de Array.
+
+console.log(Object.getOwnPropertyDescriptor(window, "innerHeight")); // Mostra filtrado no console, pois puxa de uma única propriedade.
+
 //* > Métodos keys, values e entries.
+
+// O método keys retorna uma array com as chaves de todas as propriedades diretas e enumeráveis do objeto
+console.log(Object.keys(Array)); // Retorna uma array vazia([]) no console, pois não possui propriedades enumeráveis.
+console.log(Object.keys(car)); // Retorna ['brand', 'year'] no console.
+
+// O método values retorna uma array com os valores do objeto.
+console.log(Object.values(car)); // Retorna ['Ford', 2018] no console.
+
+// O método entries retorna uma array com array's contendo a chave e o valor.
+console.log(Object.entries(car)); // Retorna [['brand', 'Ford'], ['year', 2018]] no console.
 
 //* > Método getOwnPropertyNames.
 
+// O método getOwnPropertyNames retorna uma array com todas as propriedades diretas do objeto, incluindo os enumeráveis (não retorna as do protótipo).
+console.log(Object.getOwnPropertyNames(Array)); // Retorna ['length', 'name', 'prototype', 'isArray', 'from', 'of'] no console.
+console.log(Object.getOwnPropertyNames(Array.prototype)); // Retorna [..., 'filter', 'map', 'every', 'some', 'reduce', ...] no console.
+console.log(Object.getOwnPropertyNames(car)); // Retorna ['brand', 'year'] no console.
+
 //* > Métodos getPrototypeOf e is.
+
+// O método getPrototypeOf retorna o protótipo do objeto.
+console.log(Object.getPrototypeOf(car)); // Retorna no console o protótipo do object construtor array.
+console.log(Object.getPrototypeOf("")); // Retorna no console o protótipo do object constructor string.
+
+const newFruit = car; // Está criando uma nova constante armazenando o objeto car.
+
+// O método is verifica se os objetos são iguais e retorna true ou false.
+console.log(Object.is(car, city)); // Retorna false no console.
+console.log(Object.is(car, car)); // Retorna true no console.
 
 //* > Métodos freeze, seal e preventExtensions.
 
+const myInfos = {
+  firstname: "Luiz",
+  lastname: "Silva",
+  age: 19,
+};
+
+// O método freeze congela o objeto, assim impedindo qualquer mudança nas propriedades.
+Object.freeze(myInfos);
+myInfos.firstname = "Lucas"; // O freze não deixa alterar o valor do firstname.
+myInfos.study = true; // Também não deixa adicionar nvoas propriedades
+delete myInfos.age; // Também não pode ser deletada.
+console.log(myInfos); // Não retorna nenhuma mudança pois o frezee não deixa.
+
+const documents = {
+  rg: 123456789,
+  cpf: 12336273678,
+};
+
+// O método seal previne a adição de novas propriedades e impede que as atuais sejam deletadas.
+Object.seal(documents);
+documents.cnh = 2342367855; // O seal não permite adicionar um novo valor.
+delete documents.cpf; // Não permite deletar nenhuma propriedade.
+console.log(documents); // Não retorna nenhuma propriedade nova pois o seal não deixa.
+
+const idioms = {
+  usa: "English",
+  brazil: "Portuguese",
+  japao: "Japanese",
+};
+
+// O método preventExtensions previne a adição de novas propriedades.
+Object.preventExtensions(idioms);
+idioms.italy = "Italian"; // Não permite adicionar novas propriedades.
+idioms.brazil = "Portuguese BR"; // Permite alterar propriedades já existentes.
+delete idioms.usa; // Permite deletar uma propriedade.
+console.log(idioms);
+
+// O método isFrozen verifica se o objeto está congelado.
+console.log(Object.isFrozen(myInfos)); // Retorna true no console pois está congelado.
+
+// O método isSealed verifica se o objeto está fechado.
+console.log(Object.isSealed(documents)); // Retorna true no console pois ele está fechado/selado.
+
+// O método isExtensible verifica se pode ser extensivo ou não.
+console.log(Object.isExtensible(idioms)); // Retorna false no console pois não pode ser extensivo, pois foi usado o preventExtensions.
+
 //* > Propriedades e Métodos do protótipo.
+
+// Já que tudo em JavaScript é objeto, as propriedades abaixo estão disponíveis em todos os objetos criados a partir de funções construtoras. {}.constructor retorna a função construtora do objeto.
+const fruits = ["Banana", "Uva"];
+console.log(fruits.constructor); // Retorna uma function array no console.
+
+const phrase = "Isso é uma String";
+console.log(phrase.constructor); // Retorna function string no console.
 
 //* > Métodos hasOwnProperty e propertyIsEnumerable.
 
+// O método hasOwnProperty verifica se possui a propriedade e retorna true. A propriedade deve ser direta do objeto e não do protótipo.
+console.log(fruits.hasOwnProperty("map")); // Retorna false no console.
+// fruits.map(); // Não a propriedade utilizando o objeto fruits.
+
+console.log(Array.hasOwnProperty("map")); // Retorna false no console.
+// Array.map(); // Não existe a propriedade utilizando o objeto nativo Array.
+
+console.log(Array.prototype.hasOwnProperty("map")); // Retorna true no console.
+// Array.prototype.map(); // Existe a propriedade utilizando no prototype do objeto Array.
+
+// O método propertyIsEnumerable verifica se a propriedade é enumerável.
+console.log(Array.prototype.propertyIsEnumerable("map")); // Retorna false no console.
+console.log(window.propertyIsEnumerable("innerHeight")); // Retorna true no console.
+
 //* > Método isPrototypeOf.
 
+// O método isPrototypeOf verifica se é o protótipo do valor passado.
+Array.prototype.isPrototypeOf(fruits); // Retorna true no console.
+
 //* > Método toString.
+
+// O método toString retorna o tipo do objeto. O problema é toString ser uma função dos protótipos de Array, String e mais. Por isso é comum utilizarmos a função direto do Object.prototype.toString.call(valor).
+
+const moreFruits = ["Laranja", "Carambola"];
+console.log(moreFruits.toString()); // Retorna Laranja,Carambola no console pois transforma em uma string.
+console.log(typeof moreFruits); // Retorna object no console.
+console.log(Object.prototype.toString.call(moreFruits)); // Retorna no console o tipo do objeto, nesse caso [object Array].
+
+const morePhrase = "Uma String";
+console.log(morePhrase.toString()); // Retorna Uma String no console
+console.log(typeof morePhrase); // Retorna string no console.
+console.log(Object.prototype.toString.call(morePhrase)); // Retorna no console o tipo do objeto, nesse caso [object String].
+
+const bmwCar = { brand: "BMW" };
+console.log(bmwCar.toString()); // Retorna no console o tipo do objeto, nesse caso [object Object].
+console.log(typeof bmwCar); // Retorna object no console.
+console.log(Object.prototype.toString.call(bmwCar)); // [object Object]
+
+const li = document.querySelectorAll("li");
+console.log(typeof li); // Retorna object no console.
+console.log(Object.prototype.toString.call(li)); // Retorna no console o tipo do objeto, nesse caso [object NodeList].
