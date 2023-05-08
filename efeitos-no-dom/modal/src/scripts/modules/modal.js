@@ -1,3 +1,5 @@
+// Função responsável por fazer o modal aparecer e sumir da tela.
+// O export é usado para permitir que o código seja usado em outro arquivo JS. O default é geralmente usado para quando tem que exportar somente uma função do mesmo arquivo.
 export default function initModal() {
   // Está puxando do DOM elementos dataset para serem usamos no JS.
   const botaoAbrir = document.querySelector("[data-modal='open']");
