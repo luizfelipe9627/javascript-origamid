@@ -1,6 +1,5 @@
 // Função responsável por fazer o tooltips funcionar, que são textos informativos exibidos em pequenas caixas flutuantes junto aos elementos (inputs, labels, menus, etc.) quando o usuário para o cursor do mouse sobre eles.
-// O export é usado para permitir que o código seja usado em outro arquivo JS.
-// O default é geralmente usado para quando só tem que exportar um único valor no mesmo arquivo.
+// O export é usado para permitir que o código seja usado em outro arquivo JS. O default é geralmente usado para quando tem que exportar somente uma função do mesmo arquivo.
 export default function initTooltip() {}
 
 // Está puxando do DOM elementos dataset definidos no HTML para serem usamos no JS.
@@ -23,7 +22,7 @@ if (tooltips) {
 
     tooltipBox.classList.add("tooltip"); // Adiciona a classe tooltip na div criada.
     tooltipBox.innerText = text; // Adiciona a div tooltipBox o texto criado no aria-label no HTML.
-    
+
     document.body.appendChild(tooltipBox); // No final do body adiciona(torna filho) o elemento tooltipBox passado.
 
     return tooltipBox; // Retorna a constante tooltipBox presente dentro da função onMouseOver.

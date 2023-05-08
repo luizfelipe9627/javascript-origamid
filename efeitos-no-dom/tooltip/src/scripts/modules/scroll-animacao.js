@@ -1,6 +1,5 @@
 // Função responsável por fazer conteúdo aparecer animado ao rolar o scroll e abrir o site.
-// O export é usado para permitir que o código seja usado em outro arquivo JS.
-// O default é geralmente usado para quando só tem que exportar um único valor no mesmo arquivo.
+// O export é usado para permitir que o código seja usado em outro arquivo JS. O default é geralmente usado para quando tem que exportar somente uma função do mesmo arquivo.
 export default function initAnimationScroll() {
   const sections = document.querySelectorAll("[data-anime='scroll']"); // Está pegando no DOM todos os elementos que contenham o dataset anime="scroll".
 

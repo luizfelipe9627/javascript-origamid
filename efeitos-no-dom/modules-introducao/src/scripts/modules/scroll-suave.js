@@ -1,6 +1,5 @@
 // Função responsável por fazer o scroll suave para as section funcionar.
-// O export é usado para permitir que o código seja usado em outro arquivo JS.
-// O default é geralmente usado para quando só tem que exportar um único valor no mesmo arquivo.
+// O export é usado para permitir que o código seja usado em outro arquivo JS. O default é geralmente usado para quando tem que exportar somente uma função do mesmo arquivo.
 export default function initScrollToSection() {
   const internsLinks = document.querySelectorAll(
     "[data-menu='smooth'] a[href^='#']"

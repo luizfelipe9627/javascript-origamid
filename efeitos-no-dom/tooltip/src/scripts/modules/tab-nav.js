@@ -1,6 +1,5 @@
 // Função responsável por fazer o menu  de animais em conjunto com a descrição funcionar.
-// O export é usado para permitir que o código seja usado em outro arquivo JS.
-// O default é geralmente usado para quando só tem que exportar um único valor no mesmo arquivo.
+// O export é usado para permitir que o código seja usado em outro arquivo JS. O default é geralmente usado para quando tem que exportar somente uma função do mesmo arquivo.
 export default function initTabNav() {
   const tabMenu = document.querySelectorAll("[data-tab='menu'] li"); // Está puxando todos os elementos LI do dataset tab="menu".
   const tabContent = document.querySelectorAll("[data-tab='content'] section"); // Está puxando todos os elementos section do dataset tab="content".
@@ -14,7 +13,7 @@ export default function initTabNav() {
       tabContent.forEach((section) => {
         section.classList.remove("ativo"); // Remove a classe ativo de cada um dos elementos.
       });
-      
+
       const directionAnime = tabContent[index].dataset.anime; // Criado uma constante responsável por armazenar o valor do dataset data-anime.
 
       tabContent[index].classList.add("ativo", directionAnime); // Adiciona a classe ativo e o dataset anime ao número da posição do elemento passado no index.
