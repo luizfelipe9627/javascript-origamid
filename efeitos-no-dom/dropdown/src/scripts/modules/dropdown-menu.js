@@ -1,3 +1,6 @@
+// O import é usado para chamar uma função por exemplo para importar dinamicamente um módulo que utiliza export.
+import outsideClick from "./outsideclick.js";
+
 // Função responsável por abrir e fechar o dropdown aparecer ao clicar com o mouse no menu.
 // O export é usado para permitir que o código seja usado em outro arquivo JS. O default é geralmente usado para quando tem que exportar somente uma função do mesmo arquivo.
 export default function initDropdownMenu() {
@@ -18,11 +21,13 @@ export default function initDropdownMenu() {
     function handleClick(event) {
       event.preventDefault(); // Impede o carregamento da página.
       // O this está referenciando o menu do forEach passado.
-      this.classList.toggle("ativo"); // Adiciona uma classe(se já não tiver) e remove a classe(se já tiver) no menu chamado ativo.
-    }
+      this.classList.add("ativo"); // Adiciona uma classe no menu chamado ativo.
 
-    function outsideClick() {
-      
+      // Executa a função outsideClick que tem o this referenciando o element da função, a array referenciando o eve,ts e a função anonima referenciando o callback.
+      outsideClick(this, ["touchstart", "click"], () => {
+        // Escopo do parâmetro callback criado na função.
+        this.classList.remove("ativo"); // Remove do element(data-dropdown) a classe ativo.
+      });
     }
   }
 }
