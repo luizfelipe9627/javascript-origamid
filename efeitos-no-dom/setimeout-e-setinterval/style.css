@@ -1,0 +1,7 @@
+/* body {
+  background-color: #0000FF;
+} */
+
+body.red {
+  background-color: #FF0000;
+}
