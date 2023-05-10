@@ -1,0 +1,37 @@
+[data-dropdown] {
+  position: relative;
+}
+
+[data-dropdown] .dropdown-menu {
+  display: none;
+}
+
+[data-dropdown]:hover .dropdown-menu, [data-dropdown].ativo .dropdown-menu {
+  display: block;
+  /* O forwards é usado para quando acontecer a animação ele continuar no fim da animação. */
+  animation: show-up .5s forwards;
+}
+
+.dropdown-menu {
+  position: absolute;
+  background: #E54;
+  border: 2px solid #333;
+  z-index: 999;
+  top: 38px;
+}
+
+.dropdown-menu li a:hover {
+  color: #FFF;
+}
+
+.dropdown-menu::before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: -10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #E54;
+}
