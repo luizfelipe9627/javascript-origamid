@@ -1,44 +1,26 @@
-// Função responsável por fazer o funcionamento do relógio.
+// Função responsável por aplicar o horário e dias de funcionamento.
 // O export é usado para permitir que o código seja usado em outro arquivo JS. O default é geralmente usado para quando tem que exportar somente uma função do mesmo arquivo.
-export default function initFuncionamento() {}
+export default function initFuncionamento() {
+  const funcionamento = document.querySelector("[data-semana]"); // Está puxando do DOM o elemento dataset definido no HTML para serem usamos no JS.
+  
+  // Para evitar dar erro primeiro o if verifica se o elemento existe na página, se existir ele torna as funções e métodos criados existentes.
+  if (funcionamento) {
+    const diasSemana = funcionamento.dataset.semana.split(",").map(Number); // Pega os valores definidos no dataset semana e transforma em uma array, em seguida o map transforma os valores em number.]
+    const horariosSemana = funcionamento.dataset.horario.split(",").map(Number); // Pega os valores definidos no dataset horario e transforma em uma array, em seguida o map transforma os valores em number.
 
-//* > Object constructor Date.
+    const dataAgora = new Date(); // Criado uma nova data que é baseada no horário interno do computador.
+    const diaAgora = dataAgora.getDay(); // Pega a data atual e filtra o dia.
+    const horarioAgora = dataAgora.getHours(); // Pega a data atual e filtra a hora.
 
-const timeNow = new Date(); // Criado um construtor Date que gera dados de horário e data conforme o computador.
-console.log(timeNow); // Retorna no console a data baseada no relógio interno do computador.
+    const semanaAberta = diasSemana.indexOf(diaAgora) !== -1; // Verifica se na array diasSemana existe o número da semana presente dentro do diaAgora, se existir ele retorna o número(true), se não ele irá retornar -1(false).
+    const horarioAberto =
+      horarioAgora >= horariosSemana[0] && horarioAgora < horariosSemana[1]; // Verifica se o horário do computador for maior ou igual ao primeiro horario(8) da array horariosSemana e se o hórario do computador for menor que segundo horario(18).
 
-//* Métodos do Date.
-
-// O método getDate é usado para obter o dia do object Date.
-const getDate = timeNow.getDate();
-console.log(getDate); // Retorna o dia no console.
-
-// O método getDay é usado para obter o dia da semana.
-const getDay = timeNow.getDay();
-console.log(getDay); // Retorna no console o número da semana, sendo 0 Domingo até 6 que é Sexta-feira.
-
-// O método getMonth é usado para obter o número do mês.
-const getMonth = timeNow.getMonth();
-console.log(getMonth); // Retorna no console o número da mês, sendo 0 Janeiro até 11 que é Dezembro.
-
-// O método getFullYear é usado para obter o ano.
-const getFullYear = timeNow.getFullYear();
-console.log(getFullYear); // Retorna no console o ano.
-
-// O método getHours é usado para obter as horas.
-const getHours = timeNow.getHours();
-console.log(getHours); // Retorna no console as horas.
-
-// O método getMinutes é usado para obter os minutos.
-const getMinutes = timeNow.getMinutes();
-console.log(getMinutes); // Retorna no console os minutos.
-
-// O método getTime é usado para obter os ms(milissegundos) desde 1970.
-const pastDays = timeNow.getTime() / (24 * 60 * 60 * 1000); // Total de dias desde 1 de janeiro de 1970.
-console.log(pastDays); // Retorna no console os milissegundos.
-
-// !O método getUTCHours é usado para obter o número de horas de acordo com o horário universal.
-const getUTCHours = timeNow.getUTCHours() - 3;
-console.log(getUTCHours); // Retorna no console o fuso horário de Brasília.
-
-//* > Utilizando Date na prática.
+    // Se semanaAberta e horarioAberto for true executa o if.
+    if (semanaAberta && horarioAberto) {
+      funcionamento.classList.add("aberto");
+    } else {
+      funcionamento.classList.add("fechado");
+    }
+  }
+}
