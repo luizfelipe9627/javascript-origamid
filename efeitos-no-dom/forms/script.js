@@ -31,10 +31,16 @@ const formsContatoValue = document.forms.contato.elements.nome.value;
 console.log(formsContatoValue);
 
 const form = document.querySelector("#contato"); // Está selecionando no DOM o primeiro elemento encontrado com o id contato e armazenando na constante chamada form.
+const span = document.querySelector('.texto');  // Está selecionando no DOM o primeiro elemento encontrado com a classe texto e armazenando na constante chamada span.
 
 // Função responsável por puxar o texto que o usuário digitar no input, para assim não precisar botar um value diretamente no HTML.
 function handleKeyUp(event) {
-  return console.log(event.target.value); // Retorna no console a partir do evento do elemento que está recebendo interação retorna o value digitado.
+  // Pega o que é escrito a partir do evento do elemento que está recebendo interação e retorna o value digitado.
+  console.log(event.target.value);
+  span.innerText = event.target.value;
 }
 
-form.addEventListener("keyup", handleKeyUp); // A cada vez que for digitado algo no input ele irá executar a função handleKeyUp.
+form.addEventListener("change", handleKeyUp); // A cada vez que houver uma mudança(change) de  input ele irá executar a função handleKeyUp.
+
+//* > Validação.
+
