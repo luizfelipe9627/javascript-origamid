@@ -12,13 +12,24 @@
 <body>
   <form name="contato" id="contato">
     <label for="nome">Nome</label>
-    <input type="text" name="nome" id="nome" value="Luiz">
+    <input type="text" name="nome" id="nome" value="Luiz" required>
+    <span class="error"></span>
 
     <label for="email">Email</label>
-    <input type="text" name="email" id="email">
+    <input type="email" name="email" id="email" required>
+    <span class="error"></span>
 
     <label for="mensagem">Mensagem</label>
     <textarea name="mensagem" id="mensagem"></textarea>
+
+    <select name="cores" id="cores">
+      <option>Escolha a cor</option>
+      <option value="blue">Azul</option>
+      <option value="red">Vermelho</option>
+      <option value="green">Verde</option>
+      <option value="brown">Marrom</option>
+      <option value="purple">Roxo</option>
+    </select>
   </form>
 
   <span class="texto"></span>

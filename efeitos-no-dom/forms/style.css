@@ -5,6 +5,13 @@ label {
   margin: 1rem 0 .5rem 0;
 }
 
+.texto {
+  height: 200px;
+  display: block;
+  max-width: 400px;
+  margin: 10px auto;
+}
+
 form {
   max-width: 400px;
   margin: 0 auto;
@@ -24,4 +31,8 @@ textarea {
 
 textarea {
   height: 150px;
+}
+
+.invalido {
+  border-color: #FF0000;
 }
