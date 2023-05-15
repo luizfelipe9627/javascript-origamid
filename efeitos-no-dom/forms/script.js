@@ -35,10 +35,9 @@ const span = document.querySelector(".texto"); // Está selecionando no DOM o pr
 
 // Função responsável por puxar o texto que o usuário digitar no input, para assim não precisar botar um value diretamente no HTML.
 function handleChange1(event) {
-  const target = event.target; // Armazena na constante target o evento do elemento que está recebendo a interação.
+  const targetValue = event.target.value; // Armazena na constante target o valor do evento do elemento que está recebendo a interação.
 
-  console.log(target.value); // Mostra no console o que foi escrito no elemento que está sendo interagido.
-  span.innerText = `Sua interação resultou em: ${target.value}`; // Atribui ao span HTML uma string e o que foi escrito no elemento que está sendo interagido.
+  span.innerText = `Sua interação resultou em: ${targetValue}`; // Atribui ao span HTML uma string e o que foi escrito no elemento que está sendo interagido.
 }
 
 form.addEventListener("change", handleChange1); // A cada vez que houver uma mudança(change) de input no form ele irá executar a função handleChange1.
@@ -77,10 +76,28 @@ function handleChange3(event) {
 
 form.addEventListener("change", handleChange3); // A cada vez que houver uma mudança(change) de input no form ele irá executar a função handleChange3.
 
-//* > Inputs diferentes.
-
 //* Checkbox.
 
-//* Radio.
+function handleChange4(event) {
+  const target = event.target; // Armazena na constante target o valor do evento do elemento que está recebendo a interação.
+  const targetValue = event.target.value; // Armazena na constante targetValue o valor do evento do elemento que está recebendo a interação.
+
+  // Se o targetValue estiver checado executa o if.
+  if (target.checked) {
+    console.log(targetValue); // Mostra no console do evento do elemento que está sendo interagido.
+  }
+}
+
+form.addEventListener("change", handleChange4); // A cada vez que houver uma mudança(change) de input no form ele irá executar a função handleChange4.
 
 //* Pegando todos os valores.
+
+const data = {}; // Criado um objeto vazio chamado data.
+
+function handleChange4(event) {
+  const targetName = event.target.name; // Armazena na constante targetName o name do evento do elemento que está recebendo a interação.
+  const targetValue = event.target.value; // Armazena na constante targetValue o valor do evento do elemento que está recebendo a interação.
+
+  data[targetName] = targetValue; // Adiciona uma nova propriedade nomeada com o name definido no elemento clicado e adiciona o valor dessa propriedade conforme o que foi digitado no elemento interagido.
+  console.log(data); // Retorna no console o objeto modificado.
+}
