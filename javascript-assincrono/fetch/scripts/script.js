@@ -40,7 +40,7 @@ cep1
 
 //* > Método text.
 
-const css = fetch("./style.css"); // Criado uma constante chamada css que armazena as infos do arquivo style.css.
+const css = fetch("../styles/background.css"); // Criado uma constante chamada css que armazena as infos do arquivo background.css.
 
 // O fetch faz a requisição no arquivo CSS passado e quando tiver o status de ok(carregado com sucesso) o then executa.
 css
@@ -63,7 +63,7 @@ css
 
 // Podemos pegar um arquivo inteiro em HTML, transformar o corpo em texto e inserir em uma div com o innerHTML. A partir dai podemos manipular esses dados como um DOM qualquer.
 
-const about = fetch("./about.html"); // Criado uma constante chamada css que armazena as infos do arquivo about.html.
+const about = fetch("../templates/about.html"); // Criado uma constante chamada css que armazena as infos do arquivo about.html.
 
 const div = document.createElement("div"); // Criado uma constante chamada div que está armazenando um elemento(tag) div.
 
