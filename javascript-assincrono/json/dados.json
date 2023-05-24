@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "course": "HTML",
+    "time": "17min"
+  },
+  {
+    "id": 2,
+    "course": "CSS",
+    "time": "28min"
+  },
+  {
+    "id": 3,
+    "course": "JavaScript",
+    "time": "40min"
+  }
+]
