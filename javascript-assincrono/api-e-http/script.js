@@ -95,7 +95,3 @@ fetch(url2, {
 
     console.log(response.headers.get("Content-Type")); // Através do objeto Response acessa o headers e executa a função get que obtém e retorna algo, nesse caso o Content-Type(tipo de conteúdo) do objeto Response e mostra no console.
   });
-
-//* > Headers.
-
-//* > Cors.
