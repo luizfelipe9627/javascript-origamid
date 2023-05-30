@@ -8,6 +8,7 @@ JavaScript é uma linguagem de programação interpretada estruturada, de script
 
 - ``HTML5``
 - ``JAVASCRIPT``
+- ``CSS``
 
 ## 🧑‍💻 Criador
 
