@@ -33,6 +33,8 @@ function handleClick(event) {
 // A palavra chave async indica que a função possui partes assíncronas e que você pretende esperar a resolução da mesma antes de continuar.
 // Função responsável por fazer o fetch dos arquivos HTML.
 async function fetchPage(url) {
+  document.querySelector(".content").innerHTML = "Carregando"; // Irá aparecer o texto no elemento que contém content antes do fetch ser feito, mas nesse caso o fetch está sendo muito rápido.
+
   // O fetch faz a requisição para o arquivo criado e quando tiver o status de ok(carregado com sucesso) retorna a promise.
   const pageResponse = await fetch(url); // Armazena na constante pageResponse a resposta do fetch e por conta do await retorna a resposta somente quando a promise for resolvida(cumprida).
   const pageText = await pageResponse.text(); // Converte a resposta do fetch em texto e armazena na constante pageText. O await faz esperar até a promise for cumprida.
@@ -54,9 +56,9 @@ function replaceContent(newTest) {
 
 // Adiciona um evento popstate na janela do navegador, o evento do tipo popstate  é acionado sempre que for clicado no botão de voltar e próximo. Quando acionado executa o callback criado.
 window.addEventListener("popstate", () => {
-  const oldUrl = window.location.pathname; // Através do window acessa o location que é um objeto que contém informações sobre a URL e depois dentro do location pega o pathname que armazena a URL depois do host(000.0.0.0:0000).
-  console.log(oldUrl);
-  //fetchPage(); // Executa a função fetchPage novamente e como seu parâmetro a url
+  const oldUrl = window.location.pathname; // Dentro do objeto window.location há uma propriedade chamada pathname que armazena a URL depois do host(000.0.0.0:0000) e armazena a informação na constante oldUrl.
+
+  fetchPage(oldUrl); // Executa a função fetchPage novamente e como seu parâmetro é passado a url presente na constante oldUrl.
 });
 
 // O forEach percorre cada link armazenado na constante links.
