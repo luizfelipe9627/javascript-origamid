@@ -24,26 +24,36 @@ export default class Countdown {
     return this._futureDate.getTime() - this._actualDate.getTime(); // Retorna a diferença da data atual até a data futura em milissegundos.
   }
 
+  // Criado um get que contém um método chamado days usado para converter milissegundos em dias.
+  // O get é usado para obter informações e não pode ser alterado.
   get days() {
     // Para fazer esse calculo pegamos o total de horas no dia(24h) multiplicado por 60m que resulta em 1 hora e multiplicado por 60s que é 1m e por fim multiplicado por 1000ms que é 1s.
     return Math.floor(this._timeStampDiff / (24 * 60 * 60 * 1000)); // Pega os milissegundos e converte em dias e por fim retorna os números arredondados(para baixo).
   }
 
+  // Criado um get que contém um método chamado hours usado para converter milissegundos em horas.
+  // O get é usado para obter informações e não pode ser alterado.
   get hours() {
     // Para fazer esse calculo pegamos 60m que resulta em 1 hora e multiplicado por 60s que é 1m e por fim multiplicado por 1000ms que é 1s.
     return Math.floor(this._timeStampDiff / (60 * 60 * 1000)); // Pega os milissegundos e converte em horas e por fim retorna os números arredondados(para baixo).
   }
 
+  // Criado um get que contém um método chamado minutes usado para converter milissegundos em minutos.
+  // O get é usado para obter informações e não pode ser alterado.
   get minutes() {
     // Para fazer esse calculo pegamos 60s que é 1m e por fim multiplicado por 1000ms que é 1s.
     return Math.floor(this._timeStampDiff / (60 * 1000)); // Pega os milissegundos e converte em minutos e por fim retorna os números arredondados(para baixo).
   }
 
+  // Criado um get que contém um método chamado seconds usado para converter milissegundos em segundos.
+  // O get é usado para obter informações e não pode ser alterado.
   get seconds() {
     // Para fazer esse calculo pegamos 1000ms que é 1s.
     return Math.floor(this._timeStampDiff / 1000); // Pega os milissegundos e converte em segundos e por fim retorna os números arredondados(para baixo).
   }
 
+  // Criado um get que contém um método chamado days usado para formatar e retornar todos os tempos convertidos.
+  // O get é usado para obter informações e não pode ser alterado.
   get total() {
     // Está acessando os métodos get(pelo this que referencia a class) e armazenando as informações do tempo até o natal convertidas e formatadas(usando o %) nas constantes.
     const days = this.days;
