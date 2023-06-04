@@ -19,14 +19,13 @@ function createButton(text) {
 
 const buyButton = createButton("Comprar"); // Armazena na constante buyButton a execução da função e atribuindo ao seu parâmetro um valor do tipo string.
 
-console.log(buyButton); // Mostra no console o objeto retornado da função createButton.
+console.log(buyButton); // Mostra no console o objeto final retornado da função createButton.
 console.log(buyButton.element()); // Mostra no console o botão criado no método element, podemos acessar qualquer método da função principal.
 
 //* > Métodos e Variáveis privadas.
 
-// Uma das vantagens é a possibilidade de criarmos métodos e variáveis privadas.
-
 function createPerson1(firstName, lastName) {
+  // Uma das vantagens é a possibilidade de criarmos métodos e variáveis privadas como o caso do fullName.
   const fullName = `${firstName} ${lastName}`; // Criado uma constante chamada fullName que recebe o valor atribuído aos dois parâmetros da função e transforma numa string.
 
   // Criado uma função chamada walk.
@@ -52,8 +51,9 @@ function createPerson1(firstName, lastName) {
 
 const programmer = createPerson1("Luiz", "Felipe"); // Armazena na constante createPerson1 a execução da função e atribui aos seus parâmetros da função um valor do tipo string.
 
-console.log(programmer); // Mostra no console o objeto retornado da função createPerson1.
+console.log(programmer); // Mostra no console o objeto final retornado da função createPerson1.
 console.log(programmer.firstName); // Mostra no console a o retorno da string com o nome, podemos acessar e até alterar qualquer método da função principal.
+console.log(programmer.fullName); // Mostra undefined no console pois é uma variável privada, não pode ser acessada diretamente.
 
 //* > Ice factory.
 
@@ -78,16 +78,18 @@ function createPerson2(firstName, lastName) {
 }
 
 const designer = createPerson2("André", "Rafael"); // Armazena na constante createPerson2 a execução da função e atribui aos seus parâmetros da função um valor do tipo string.
-console.log(designer); // Mostra no console o objeto retornado da função createPerson2.
+designer.firstName = "Lucas"; // Não irá reescrever o firstName pois o objeto está congelado.
+console.log(designer); // Mostra no console o objeto final retornado da função createPerson2.
 
 //* > Constructor function e Factory function.
 
-// Criado uma função chamada Person que contém um parâmetro.
+// Criado uma constructor function chamada Person que contém um parâmetro.
 function Person(firstName) {
-  // Se
-  if (!(this instanceof Person))
-    // Ou (!new.target)
+  // Se e o this(a função) for uma instancia(tiver as propriedades no prototype) de Person ele executa o if se for false.
+  // Ou (!new.target) que verifica se o new possui o target de Person.
+  if (!(this instanceof Person)) {
     return new Person(firstName); // Retorna um novo objeto Person que contém como parâmetro o valor definido na função pai.
+  }
   this.firstName = firstName; // Está referenciando o this ao parâmetro firstName criado no novo objeto Person.
 }
 
@@ -96,7 +98,6 @@ Person.prototype.walk = function () {
   return `${this.firstName} andou`; // Retorna em string o this que contém o valor do parâmetro firstName.
 };
 
-const webDesigner = Person("André"); // Armazena na constante webDesigner a execução da função e atribui a seu parâmetro da função um valor do tipo string.
-console.log(programmer); // Mostra no console o resultado do objeto Person no console.
-
-//* > Exemplo real.
+// Uma das vantagens da Factory Function é a possibilidade de iniciarmos a mesma sem a utilização da palavra chave new. Também é possível fazer isso com uma Constructor Function.
+const webDesigner = Person1("André"); // Armazena na constante webDesigner a execução da função e atribui a seu parâmetro da função um valor do tipo string.
+console.log(webDesigner); // Mostra no console o resultado do objeto Person1 armazenado na constante no console.
