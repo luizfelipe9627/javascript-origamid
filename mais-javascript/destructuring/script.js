@@ -24,7 +24,7 @@ const client = {
       videos: ["Video JS", "Video HTML"],
     },
     physical: {
-      notebooks: ["Notebook 1"],
+      notebooks: ["Caderno 1"],
     },
   },
 };
@@ -99,12 +99,12 @@ const fruitsColor = {
   green: "Melancia",
 };
 
-// Caso a propriedade não exista o valor padrão dela será undefined. É possível modificar este valor no momento da desestruturação.
+// Caso a propriedade não exista o valor padrão dela será undefined. É possível colocar um valor como padrão, adicionando ele.
 const { red, green, yellow = "Banana", purple } = fruitsColor;
 
 console.log(red); // Mostra o valor presente da propriedade do objeto fruitsColor no console.
 console.log(green); // Mostra o valor presente da propriedade do objeto fruitsColor no console.
-console.log(yellow); // Mostra o valor criado no console.
+console.log(yellow); // Mostra o valor padrão definido no console.
 console.log(purple); // Mostra undefined no console pois o valor não existe no objeto e nem está sendo criado.
 
 //* > Destructuring arrays.
@@ -136,12 +136,12 @@ const [first2, second2, third2] = ["Item 1", "Item 2", "Item 3"]; // Criado 3 co
 
 // Criado uma função chamada handleKeyboard que recebe um parâmetro chamado event.
 function handleKeyboard(event) {
-  console.log(event.key); // Mostra no console a tecla que disparou o evento.
+  console.log(event); // Mostra no console a tecla que disparou o evento.
 }
 
-// Com destructuring passamos
-function handleKeyboard({ key }) {
-  console.log(key); // Mostra no console a tecla que disparou o evento.
+// Com destructuring pegamos somente a propriedade do objeto event(por isso os {}) diretamente, sendo assim queremos o key então passamos como parâmetro da função.
+function handleKeyboard({ key, keyCode }) {
+  console.log(key, keyCode); // Mostra no console a tecla que disparou o evento acessando diretamente o objeto event.
 }
 
 document.addEventListener("keyup", handleKeyboard); // Adiciona um evento de tecla ao document, que ao ser acionado executa a função handleKeyboard.
