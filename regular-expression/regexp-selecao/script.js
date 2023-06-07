@@ -95,75 +95,111 @@ console.log(newText14); // Mostra "------------ -$ --,--." no console.
 // O \W irá selecionar tudo o que não for caractere alfanumérico e o underline. É a mesma coisa que [^A-Za-z0-9_].
 
 const regexp15 = /\W/g; // Procura por todos os que não forem caractere alfanuméricos(letras e números). Depois armazena o resultado na constante.
-
 const newText15 = "Guarda-chuva R$ 23,00.".replace(regexp15, "-"); // Pega a string "Guarda-chuva R$ 23,00." e troca todos os que não forem alfanuméricos pelo caractere "-" e armazena o resultado na constante.
 console.log(newText15); // Mostra "Guarda-chuva-R--23-00-" no console.
 
 //* > Digit.
 // O \d irá selecionar qualquer dígito. É a mesma coisa que [0-9].
 
-const regexp16 = /\d/g; // Procura por todos os dígitos(números).
-const newText16 = "+55 (21) 2222-2222".replace(regexp16, "X"); // Pega a string "+55 (21) 2222-2222" e troca todos os dígitos pela letra "X" e armazena o resultado.
+const regexp16 = /\d/g; // Procura por todos os dígitos(números). Depois armazena o resultado na constante.
+const newText16 = "+55 (21) 2222-2222".replace(regexp16, "X"); // Pega a string "+55 (21) 2222-2222" e troca todos os dígitos pela letra "X" e armazena o resultado na constante.
 console.log(newText16); // Mostra "+XX (XX) XXXX-XXXX" no console.
 
 //* > Not digit.
 // O \D irá selecionar tudo que não for dígito. É a mesma coisa que [^0-9].
 
-const regexp17 = /\D/g; // Procura por todos que não forem dígitos(números).
-const newText17 = "+55 (21) 2222-2222".replace(regexp17, ""); // Pega a string "+55 (21) 2222-2222" e remove todos os dígitos e armazena o resultado.
+const regexp17 = /\D/g; // Procura por todos que não forem dígitos(números). Depois armazena o resultado na constante.
+const newText17 = "+55 (21) 2222-2222".replace(regexp17, ""); // Pega a string "+55 (21) 2222-2222" e remove todos os dígitos e armazena o resultado na constante.
 console.log(newText17); // Mostra "552122222222" no console.
 
 //* > Whitespace
 // O \s irá selecionar qualquer espaço em branco, isso inclui espaços, tabs, quebra de linhas.
 
-const regexp18 = /\s/g; // Procura por todos espaços em branco.
-const newText18 = "+55 (21) 2222-  2222  ".replace(regexp18, ""); // Pega a string "+55 (21) 2222-  2222" e remove todos os espaços e armazena o resultado.
+const regexp18 = /\s/g; // Procura por todos espaços em branco. Depois armazena o resultado na constante.
+const newText18 = "+55 (21) 2222-  2222  ".replace(regexp18, ""); // Pega a string "+55 (21) 2222-  2222" e remove todos os espaços e armazena o resultado na constante.
 console.log(newText18); // Mostra "+55(21)2222-2222" no console.
 
 //* > Not whitespace.
 // O \S irá selecionar qualquer caractere que não for espaço em branco.
 
-const regexp19 = /\S/g; // Procura por todos o que não forem espaço em branco.
-
-const newText19 = "+55 (21) 2222-  2222  ".replace(regexp19, "X"); // Pega a string "+55 (21) 2222-  2222  " e troca todos os que não forem espaços pelo "X" e armazena o resultado.
+const regexp19 = /\S/g; // Procura por todos o que não forem espaço em branco. Depois armazena o resultado na constante.
+const newText19 = "+55 (21) 2222-  2222  ".replace(regexp19, "X"); // Pega a string "+55 (21) 2222-  2222  " e troca todos os que não forem espaços pelo "X" e armazena o resultado na constante.
 console.log(newText19); // Mostra "XXX XXXX XXXXX  XXXX  " no console.
 
 //* > Quantificador
 // É possível selecionar caracteres seguidos, como /bbb/g irá selecionar apenas bbb. Com as chaves podemos indicar a repetição /b{3}/g. Agora ele está fazendo uma seleção completa e não caractere por caractere.
 
-const regexp20 = /aaaa/g; // Procura todos os que tiverem 4 "a" seguidos.
-const regexp20Alternativo = /a{4}/g; // Forma alternativa para procurar todos que tiverem 4 "a" seguidos.
-const newText20 = "Vaaaai ali por favor.".replace(regexp20, "a"); // Pega a string "Vaaaai ali por favor." e troca todos os que tiverem 4 a seguidos por "a" e armazena o resultado.
+const regexp20 = /aaaa/g; // Procura todos os que tiverem 4 "a" seguidos. Depois armazena o resultado na constante.
+const regexp20Alternative = /a{4}/g; // Forma alternativa para procurar todos que tiverem 4 "a" seguidos.
+const newText20 = "Vaaaai ali por favor.".replace(regexp20, "a"); // Pega a string "Vaaaai ali por favor." e troca todos os que tiverem 4 a seguidos por "a" e armazena o resultado na constante.
 console.log(newText20); // Mostra "Vai ali por favor." no console.
 
 //* > Quantificador min e max.
 // Podemos informar o min e max do quantificador /a{2,4}/ vai selecionar quando aparecer a duas vezes ou até 4 vezes. /a{2,}/ irá selecionar quando se repetir duas ou mais vezes.
 
-const regexp21 = /\d{2,3}/g; // Procura por todos os dígitos seguidos de "2" até "3".
-const newText21 = "222.333.222.42".replace(regexp21, "X"); // Pega a string "222.333.222.42" e troca todos os dígitos seguidos de 2 até 3 por "X" e armazena o resultado.
+const regexp21 = /\d{2,3}/g; // Procura por todos os dígitos seguidos de "2" até "3". Depois armazena o resultado na constante.
+const newText21 = "222.333.222.42".replace(regexp21, "X"); // Pega a string "222.333.222.42" e troca todos os dígitos seguidos de 2 até 3 por "X" e armazena o resultado na constante.
 console.log(newText21); // Mostra "X.X.X.X" no console.
 
-const regexp22 = /\w{1,}/g; // Procura por todas as letras seguidos com 1 carácter ou mais.
-const newText22 = "A melhor linguagem é JavaScript".replace(regexp22, "X"); // Pega a string "A melhor linguagem é JavaScript" e troca todos as letras seguidos de 1 carácter ou mais por "X" e armazena o resultado.
+const regexp22 = /\w{1,}/g; // Procura por todas as letras seguidos com 1 carácter ou mais. Depois armazena o resultado na constante.
+const newText22 = "A melhor linguagem é JavaScript".replace(regexp22, "X"); // Pega a string "A melhor linguagem é JavaScript" e troca todos as letras seguidos de 1 carácter ou mais por "X" e armazena o resultado na constante.
 console.log(newText22); // Mostra "X X X é X" no console.
 
 //* > Mais(+).
 // O sinal de + significa que devemos selecionar quando existir pelo menos uma ou mais ocorrências.
 
+const regexp23 = /\d+/g; // Procura por todos os dígitos em ocorrência de um ou mais. Depois armazena o resultado na constante.
+const newText23 = "222.333.222.42".replace(regexp23, "X"); // Pega a string "222.333.222.42" e troca todos as letras quando existir pelo menos uma ou mais ocorrências por "X" e armazena o resultado na constante.
+console.log(newText23); // Mostra "X.X.X.X" no console.
+
 //* > Asterisco(*).
 // O sinal * significa que devemos selecionar quando existir 0 ou mais ocorrências.
+
+const regexp24 = /d\w+/g; // Procura por todos que começa com "d', seguido por uma ou mais letras. Depois armazena o resultado na constante.
+const newText24 = "Dígitos, dados, desenhos, Dito, d".replace(regexp24, "X"); // Pega a string "Dígitos, dados, desenhos, Dito, d" e troca todos que começa com d, seguido por uma ou mais letras por "X" e armazena o resultado na constante.
+console.log(newText24); // Mostra "Dígitos, X, X, Dito, d" no console.
 
 //* > Opcional(?).
 // O sinal ? significa que o caractere é opcional, pode ou não existir.
 
+const regexp25 = /regexp?/g; // Procura por todos os regex com "p" opcional. Depois armazena o resultado na constante.
+const newText25 = "Qual é o certo, regexp ou regex?".replace(
+  regexp25,
+  "Regular Expression"
+); // Pega a string "Qual é o certo, regexp ou regex?" e troca todos os regex com p opcional por "Regular Expression" e armazena o resultado na constante.
+console.log(newText25); // Mostra " Qual é o certo, Regular Expression ou Regular Expression?" no console.
+
 //* > Alternado(|).
 // O sinal | irá selecionar um ou outro. java|php.
+
+const regexp26 = /java|php/gi; // Procura por todos os "java" ou "php" (case insensitive). Depois armazena o resultado na constante.
+const newText26 = "PHP e Java são linguagens diferentes".replace(regexp26, "X"); // Pega a string "Qual é o certo, regexp ou regex?" e troca todos os java ou php (case insensitive) por "X" e armazena o resultado na constante.
+console.log(newText26); // Mostra "X e X são linguagens diferentes" no console.
 
 //* > Word boundary \b.
 // O sinal \b irá indicar que pretendemos fazer uma seleção que deve ter início e fim de não caracteres \w.
 
+const regexp27 = /java/gi; // Procura por todos os java (case insensitive).
+const newText27 = "Java não é JavaScript.".replace(regexp27, "X"); // Pega a string "Java não é JavaScript." e troca todos os java (case insensitive) por "X" e armazena o resultado na constante.
+console.log(newText27); // Mostra "X não é XScript." no console.
+
+const regexp28 = /\bjava\b/gi; // Procura por todos os java (case insensitive).
+const newText28 = "Java não é JavaScript.".replace(regexp28, "X"); // Pega a string "Java não é JavaScript." e troca todos os java (case insensitive) por "X" e armazena o resultado na constante.
+console.log(newText28); // Mostra "X não é JavaScript" no console.
+
+const regexp29 = /\b\d+\b/gi; // Procura por todos os dígitos em sequência, que estejam isolados.
+const newText29 = "O Restaurante25 na Rua 3, custa R$ 32,00".replace(
+  regexp29,
+  "X"
+); // Pega a string "O Restaurante25 na Rua 3, custa R$ 32,00" e troca todos os dígitos em sequência, que estejam isolados. por "X" e armazena o resultado na constante.
+console.log(newText29); // Mostra "O Restaurante25 na Rua X, custa R$ X,X" no console.
+const newText29Alternative = "11_22 33-44 55é66 77e88".replace(regexp29, "X"); // Pega a string "11_22 33-44 55é66 77e88" e troca todos os dígitos em sequência, que estejam isolados. por "X" e armazena o resultado na constante.
+console.log(newText29Alternative); // Mostra "11_22 X-X XéX 77e88" no console.
+
 //* > Not word boundary \B.
 // É o contrário do \b.
+
+
 
 //* > Anchor beginning.
 // Com o ^ é possível informar que a busca deve ser iniciada no início da linha.
@@ -179,3 +215,7 @@ console.log(newText22); // Mostra "X X X é X" no console.
 
 //* > Unicode \u.
 // O \u irá selecionar o respectivo caractere unicode, de acordo com o código passado em \uXXXX. Ex: \u0040 seleciona o @.
+
+//const regexp = /\u0040|\u00A9/g; // Procura por todos os "@"" ou "©".
+//"andre@origamid.com ©".replace(regexp, "---");
+// andre---origamid.com ---
