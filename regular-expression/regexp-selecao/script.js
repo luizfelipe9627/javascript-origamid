@@ -179,15 +179,15 @@ console.log(newText26); // Mostra "X e X são linguagens diferentes" no console.
 //* > Word boundary \b.
 // O sinal \b irá indicar que pretendemos fazer uma seleção que deve ter início e fim de não caracteres \w.
 
-const regexp27 = /java/gi; // Procura por todos os java (case insensitive).
+const regexp27 = /java/gi; // Procura por todos os java (case insensitive). Depois armazena o resultado na constante.
 const newText27 = "Java não é JavaScript.".replace(regexp27, "X"); // Pega a string "Java não é JavaScript." e troca todos os java (case insensitive) por "X" e armazena o resultado na constante.
 console.log(newText27); // Mostra "X não é XScript." no console.
 
-const regexp28 = /\bjava\b/gi; // Procura por todos os java (case insensitive).
+const regexp28 = /\bjava\b/gi; // Procura por todos os java (case insensitive). Depois armazena o resultado na constante.
 const newText28 = "Java não é JavaScript.".replace(regexp28, "X"); // Pega a string "Java não é JavaScript." e troca todos os java (case insensitive) por "X" e armazena o resultado na constante.
 console.log(newText28); // Mostra "X não é JavaScript" no console.
 
-const regexp29 = /\b\d+\b/gi; // Procura por todos os dígitos em sequência, que estejam isolados.
+const regexp29 = /\b\d+\b/gi; // Procura por todos os dígitos em sequência, que estejam isolados. Depois armazena o resultado na constante.
 const newText29 = "O Restaurante25 na Rua 3, custa R$ 32,00".replace(
   regexp29,
   "X"
@@ -199,23 +199,72 @@ console.log(newText29Alternative); // Mostra "11_22 X-X XéX 77e88" no console.
 //* > Not word boundary \B.
 // É o contrário do \b.
 
-
+const regex30 = /\B\d+\B/gi; // Procura por todos os dígitos que não estão em sequência, que não estejam isolados. Depois armazena o resultado na constante.
+const newText30 = "11_22 33-44 55é66 77e88".replace(regex30, "X"); // Pega a string "11_22 33-44 55é66 77e88" e troca todos os dígitos que não estão em sequência, que não estejam isolados. por "X" e armazena o resultado na constante.
+console.log(newText30); // Mostra "1X_X2 33-44 55é66 7XeX8" no console.
 
 //* > Anchor beginning.
 // Com o ^ é possível informar que a busca deve ser iniciada no início da linha.
 
+const regex31 = /^\w+/g; // Procura por todas as sequências de alfanuméricos no início da linha. Depois armazena o resultado na constante.
+const newText31 = `andre@origamid.com
+contato@origamid.com`.replace(regex31, "X"); // Pega a template string "andre@origamid.com contato@origamid.com" e troca todas as sequências de alfanuméricos no início da linha e troca por "X" e armazena o resultado na constante.
+console.log(newText31); /*
+  Mostra "X@origamid.com
+  contato@origamid.com" no console.
+*/
+
 //* > Anchor end.
 // Com o $ é possível informar que a busca deve ser iniciada no final da linha.
+
+const regex32 = /\w+$/g; // Procura por todas as sequências de alfanuméricos no final da linha. Depois armazena o resultado na constante.
+// Pega a template string "andre@origamid.com contato@origamid.com" e troca todas as sequências de alfanuméricos no final da linha e troca por "X" e armazena o resultado na constante.
+const newText32 = `andre@origamid.com
+contato@origamid.com`.replace(regex32, "X");
+console.log(newText32); /*
+  Mostra "andre@origamid.com
+  contato@origamid.X" no console.
+*/
 
 //* > Flag: m.
 // Com a flag m de multiline, podemos informar que a busca de início ^ e final $ de linha devem ocorrer em todas as linhas disponíveis.
 
+const regexp33 = /\w+$/gm; // Procura por todas as sequências de alfanuméricos no final da linha. Depois armazena o resultado na constante.
+const newText33 = `andre@origamid.com
+contato@origamid.com`.replace(regexp, "X"); // Pega a template string "andre@origamid.com contato@origamid.com" e troca todas as sequências de alfanuméricos no final da linha por "X" e armazena o resultado na constante.
+console.log(newText33);
+/*
+  Mostra "andre@origamid.X
+  contato@origamid.X" no console.
+*/
+
+const regexp34 = /^\w+/gm; // Procura por todas as sequências de alfanuméricos no inicio da linha. Depois armazena o resultado na constante.
+const newText34 = `andre@origamid.com
+contato@origamid.com`.replace(regexp, "X"); // Pega a template string "andre@origamid.com contato@origamid.com" e troca todas as sequências de alfanuméricos no inicio da linha por "X" e armazena o resultado na constante.
+console.log(newText34);
+/*
+  Mostra "X@origamid.com
+  X@origamid.com" no console.
+*/
+
 //* > Line feed \n.
 // O \n irá selecionar o final de uma linha, quando criamos uma nova.
+
+const regexp35 = /\n/g; // Procura por todas as quebras de linhas. Depois armazena o resultado na constante.
+
+const newText35 = `andre@origamid.com\ncontato@origamid.com`.replace(
+  regexp35,
+  "---"
+); // Pega a  string "andre@origamid.com\ncontato@origamid.com" e troca todas as quebras de linhas por "---" e armazena o resultado na constante.
+console.log(newText35); // Mostra "andre@origamid.com---contato@origamid.com" no console.
+
+const newText35Alternative = `andre@origamid.com
+contato@origamid.com`.replace(regexp35, "X"); // Pega a string "andre@origamid.com contato@origamid.com" e troca todas as quebras de linhas por "X" e armazena o resultado na constante.
+console.log(newText35Alternative); // Mostra "andre@origamid.comXcontato@origamid.com" no console.
 
 //* > Unicode \u.
 // O \u irá selecionar o respectivo caractere unicode, de acordo com o código passado em \uXXXX. Ex: \u0040 seleciona o @.
 
-//const regexp = /\u0040|\u00A9/g; // Procura por todos os "@"" ou "©".
-//"andre@origamid.com ©".replace(regexp, "---");
-// andre---origamid.com ---
+const regexp36 = /\u0040|\u00A9/g; // Procura por todos os "@" ou "©". Depois armazena o resultado na constante.
+const newText36 = "andre@origamid.com ©".replace(regexp36, "---"); // Pega a string "andre@origamid.com ©" e troca todos os "@" ou "©" por "---" e armazena o resultado na constante.
+console.log(newText35); // Mostra "andre---origamid.com ---" no console.
