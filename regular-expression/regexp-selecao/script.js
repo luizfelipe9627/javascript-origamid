@@ -6,7 +6,7 @@ const newText1 = "JavaScript".replace(regexp1, "B"); // Pega a string "JavaScrip
 console.log(newText1); // Mostra "BavaScript" no console.
 
 //* > Literal.
-// Utilizar um caracter literal irá realizar uma busca específica deste caracter.
+// Utilizar um carácter literal irá realizar uma busca específica deste carácter.
 
 const regexp2 = /Java/; // Procura pelo J seguido de a,v e a. Depois armazena o resultado na constante
 const newText2 = "JavaScript".replace(regexp2, "Type"); // Pega a string "JavaScript" e troca o Java por Type e armazena o resultado na constante.
@@ -231,7 +231,7 @@ console.log(newText32); /*
 
 const regexp33 = /\w+$/gm; // Procura por todas as sequências de alfanuméricos no final da linha. Depois armazena o resultado na constante.
 const newText33 = `andre@origamid.com
-contato@origamid.com`.replace(regexp, "X"); // Pega a template string "andre@origamid.com contato@origamid.com" e troca todas as sequências de alfanuméricos no final da linha por "X" e armazena o resultado na constante.
+contato@origamid.com`.replace(regexp33, "X"); // Pega a template string "andre@origamid.com contato@origamid.com" e troca todas as sequências de alfanuméricos no final da linha por "X" e armazena o resultado na constante.
 console.log(newText33);
 /*
   Mostra "andre@origamid.X
@@ -240,7 +240,7 @@ console.log(newText33);
 
 const regexp34 = /^\w+/gm; // Procura por todas as sequências de alfanuméricos no inicio da linha. Depois armazena o resultado na constante.
 const newText34 = `andre@origamid.com
-contato@origamid.com`.replace(regexp, "X"); // Pega a template string "andre@origamid.com contato@origamid.com" e troca todas as sequências de alfanuméricos no inicio da linha por "X" e armazena o resultado na constante.
+contato@origamid.com`.replace(regexp34, "X"); // Pega a template string "andre@origamid.com contato@origamid.com" e troca todas as sequências de alfanuméricos no inicio da linha por "X" e armazena o resultado na constante.
 console.log(newText34);
 /*
   Mostra "X@origamid.com
