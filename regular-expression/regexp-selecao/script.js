@@ -58,7 +58,7 @@ const regexp9 = /[a-zA-Z]/g; // Procura por itens de "a" até "z" e "A" até "Z"
 const newText9 = "JavaScript é a linguagem.".replace(regexp9, "1"); // Pega a string "JavaScript é a linguagem." e troca todos os itens de "a" até "z" e "A" até "Z" pelo número "1" e armazena o resultado na constante.
 console.log(newText9); // Mostra "1111111111 é 1 111111111." no console.
 
-const regexp10 = /[0-9]/g; // Procura por todos os números de "0" até "9".
+const regexp10 = /[0-9]/g; // Procura por todos os números de "0" até "9". Depois armazena o resultado na constante.
 const newText10 = "123.333.333-33".replace(regexp10, "X"); // Pega a string "123.333.333-33" e troca todos os números de "0" até "9" por "X" e armazena o resultado na constante.
 console.log(newText10); // Mostra "XXX.XXX.XXX-XX" no console.
 
@@ -80,7 +80,7 @@ console.log(newText12); // Mostra "0000000000000000000000000" no console.
 // Caracteres especiais como o ponto ., podem ser escapados utilizando a barra \, assim este não terá mais a sua função especial e será tratado como literal. Lista de caracteres especiais: +*?^$\.[]{}()|/.
 
 const regexp13 = /\./g; // Procura por todos os pontos(.). Depois armazena o resultado na constante.
-const regexp13Alternativa = /[.]/g; // Forma alternativa para procurar por todos os pontos.
+const regexp13Alternative = /[.]/g; // Forma alternativa para procurar por todos os pontos.
 const newText13 = "999.222.222.11".replace(regexp13, "-"); // Pega a string "999.222.222.11" e troca todos os pontos(.) pelo caractere "-" e armazena o resultado na constante.
 console.log(newText13); // Mostra "999-222-222-11" no console.
 
@@ -196,7 +196,7 @@ console.log(newText29); // Mostra "O Restaurante25 na Rua X, custa R$ X,X" no co
 const newText29Alternative = "11_22 33-44 55é66 77e88".replace(regexp29, "X"); // Pega a string "11_22 33-44 55é66 77e88" e troca todos os dígitos em sequência, que estejam isolados. por "X" e armazena o resultado na constante.
 console.log(newText29Alternative); // Mostra "11_22 X-X XéX 77e88" no console.
 
-//* > Not word boundary \B.
+//* > Not word boundary \b.
 // É o contrário do \b.
 
 const regex30 = /\B\d+\B/gi; // Procura por todos os dígitos que não estão em sequência, que não estejam isolados. Depois armazena o resultado na constante.

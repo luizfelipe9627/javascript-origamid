@@ -35,15 +35,15 @@ console.log(regexp2.source); // Mostra no console a source(texto entre as duas b
 const regexp3 = /Java/g; // Procura por todas as sequências "Java". Depois armazena o resultado na constante.
 const phrase1 = "JavaScript e Java"; // Armazena a string criada na constante phrase1.
 
-console.log(regexp3.lastIndex); // Mostra "0" no console.
+console.log(regexp3.lastIndex); // Mostra a posição do regexp encontrado no console, no caso "0".
 console.log(regexp3.test(phrase1)); // Mostra "true" no console.
-console.log(regexp3.lastIndex); // Mostra "4" no console.))
-console.log(regexp3.test(phrase1)); // Mostra "true" no console.
-console.log(regexp3.lastIndex); // Mostra "17" no console.
-console.log(regexp3.test(phrase1)); // Mostra "false" no console.
-console.log(regexp3.lastIndex); // Mostra "0" no console.
-console.log(regexp3.test(phrase1)); // Mostra "true" no console.
-console.log(regexp3.lastIndex); // Mostra "4" no console.
+console.log(regexp3.lastIndex); // Mostra a posição do regexp encontrado no console, no caso "4".
+console.log(regexp3.test(phrase1)); // Avança para o próximo e mostra "true" no console.
+console.log(regexp3.lastIndex); // Mostra a posição do regexp encontrado no console, no caso "17".
+console.log(regexp3.test(phrase1)); // Mostra "false" no console pois não existe mais próximo.
+console.log(regexp3.lastIndex); // Mostra a posição do regexp encontrado no console, no caso "0".
+console.log(regexp3.test(phrase1)); // Reinicia o loop e começa no começo, sendo assim mostra "true" no console.
+console.log(regexp3.lastIndex); // Mostra a posição do regexp encontrado no console, no caso "4".
 
 //* > test() em loop.
 // Podemos utilizar o while loop, para mostrar enquanto a condição for verdadeira. Assim retornamos a quantidade de match's.
@@ -55,7 +55,7 @@ let i = 1; // Cria a variável i e atribui o valor 1.
 
 // Enquanto o método test() for verdadeiro irá executar o escopo.
 while (regexp4.test(phrase2)) {
-  console.log(i++, regexp4.lastIndex); // Mostra no console o valor de i e o valor do lastIndex.
+  console.log(i++, regexp4.lastIndex); // Mostra no console o valor de i e o valor do index que foio encontrado a string..
 }
 
 //* > regexp.exec().
@@ -64,15 +64,15 @@ while (regexp4.test(phrase2)) {
 const regexp5 = /\w{2,}/g; // Procura por todas as sequências alfanuméricas com 2 ou mais caracteres. Depois armazena o resultado na constante.
 const frase = "JavaScript, TypeScript e CoffeeScript"; // Armazena a string criada na constante frase.
 
-console.log(regexp5.exec(frase)); // O método excec executa a busca por um padrão em uma determinada string e mostra ["JavaScript", index: 0, input: "JavaScript, TypeScript e CoffeeScript", groups: undefined] no console.
+console.log(regexp5.exec(frase)); // O método excec() executa a busca por um padrão em uma determinada string e mostra ["JavaScript", index: 0, input: "JavaScript, TypeScript e CoffeeScript", groups: undefined] no console.
 
-console.log(regexp5.exec(frase)); // O método excec executa a busca por um padrão em uma determinada string e mostra ["TypeScript", index: 12, input: "JavaScript, TypeScript e CoffeeScript", groups: undefined] no console.
+console.log(regexp5.exec(frase)); // O método excec() executa a busca por um padrão em uma determinada string e mostra ["TypeScript", index: 12, input: "JavaScript, TypeScript e CoffeeScript", groups: undefined] no console.
 
-console.log(regexp5.exec(frase)); // O método excec executa a busca por um padrão em uma determinada string e mostra ["CoffeeScript", index: 25, input: "JavaScript, TypeScript e CoffeeScript", groups: undefined] no console.
+console.log(regexp5.exec(frase)); // O método excec() executa a busca por um padrão em uma determinada string e mostra ["CoffeeScript", index: 25, input: "JavaScript, TypeScript e CoffeeScript", groups: undefined] no console.
 
-console.log(regexp5.exec(frase)); // O método excec executa a busca por um padrão em uma determinada string e mostra "null" no console.
+console.log(regexp5.exec(frase)); // O método excec() executa a busca por um padrão em uma determinada string e mostra "null" no console.
 
-console.log(regexp5.exec(frase)); // O método excec executa a busca por um padrão em uma determinada string e mostra ["JavaScript", index: 0, input: "JavaScript, TypeScript e CoffeeScript", groups: undefined] no console.
+console.log(regexp5.exec(frase)); // O método excec() executa a busca por um padrão em uma determinada string e mostra ["JavaScript", index: 0, input: "JavaScript, TypeScript e CoffeeScript", groups: undefined] no console.
 
 //* > Loop com exec().
 // Podemos fazer um loop com exec e parar o mesmo no momento que encontre o null.
@@ -82,7 +82,7 @@ const phrase3 = "JavaScript, TypeScript e CoffeeScript"; // Armazena a string cr
 let regexpResult; // Cria a variável regexpResult.
 
 // Enquanto o método exec() for diferente de null irá executar o escopo.
-while ((regexpResult = regexp.exec(frase)) !== null) {
+while ((regexpResult = regexp6.exec(frase)) !== null) {
   console.log(regexpResult[0]); // Mostra no console o valor do index 0.
 }
 
@@ -163,11 +163,29 @@ console.log(emails1.replace(/(\w+@)[\w.]+/g, "$1gmail.com")); // O método repla
 //* > Callback.
 // Para substituições mais complexas, podemos utilizar um callback como segundo argumento do replace. O valor do return será o que irá substituir cada match.
 
+const regexp8 = /(\w+)(@[\w]+)/g;
+
 // Armazena a string criada na constante emails2.
 const emails2 = `
-empresa@email.com
-contato@email.com
-suporte@email.com
+  empresa@email.com
+  contato@email.com
+  suporte@email.com
 `;
 
-console.log(emails2.replace(/(\w+@)[\w.]+/g, "$1gmail.com")); // O método replace procura por um padrão em uma determinada string e retorna uma nova string com os valores da busca substituídos e depois mostra no console "empresa@gmail.com", "contato@gmail.com", "suporte@gmail.com".
+// O método replace procura por um padrão em uma determinada string e retorna uma nova string com os valores da busca substituídos e depois mostra no console "empresa@hotmail", "contato@hotmail", "suporte@hotmail".
+emails2.replace(regexp8, function (...args) {
+  console.log(args); // Mostra os argumentos da função no console.
+
+  // Se o segundo argumento for "@homail" retorna "empresa@hotmail".
+  if (args[2] === "@homail") {
+    return `${args[1]}@hotmail`; // Retorna "empresa@hotmail".
+  } // Se o segundo argumento for "@ggmail" retorna "empresa@gmail".
+  else if (args[2] === "@ggmail") {
+    return `${args[1]}@gmail`; // Retorna "empresa@gmail".
+  } // Se o segundo argumento for "@oulook" retorna "empresa@outlook".
+  else if (args[2] === "@oulook") {
+    return `${args[1]}@outlook`; // Retorna "empresa@outlook".
+  } else {
+    return "x"; // Retorna "x".
+  }
+});

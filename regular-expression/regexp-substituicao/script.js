@@ -12,7 +12,7 @@ console.log(newText1); // Mostra "PHP e --JavaScript são linguagens diferentes"
 // É possível definirmos diferentes grupos de captura, que poderão ser referenciados durante a substituição. Basta envolvermos um grupo entre () parênteses. A referência se cada grupo será feita com $n, sendo o primeiro $1.
 
 const regexp2 = /(\w+)@[\w.]+/g; // Procura por todas as sequências alfanumérica, seguida de "@", seguido de alfanumérico ou ".". Depois armazena o resultado na constante.
-const newText2 = "andre@email.com.br".replace(regexp2, "$1@gmail.com"); // Pega a string "andre@email.com.br" e substitui todas as sequências alfanumérica, seguida de "@"", seguido de alfanumérico ou "." por "gmail.com" e armazena o resultado na constante.
+const newText2 = "andre@email.com.br".replace(regexp2, "$1@gmail.com"); // Pega a string "andre@email.com.br" e substitui todas as sequências alfanumérica, seguida de "@", seguido de alfanumérico ou "." por "gmail.com" e armazena o resultado na constante.
 console.log(); // Mostra "andre@gmail" no console.
 
 //* > Mais de um grupo.

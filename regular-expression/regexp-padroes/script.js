@@ -99,30 +99,10 @@ for (const email of emails1) {
 
 //* > Tag.
 
-const regexpEMAIL2 = /[\w.-]+@[\w-]+\.[\w-.]+/gi; // Armazena na constante regexpEMAIL2 um regexp que irá procurar por 1 ou mais caracteres alfanuméricos ou "-" ou "." ou "+" seguido de um "@" seguido de 1 ou mais caracteres alfanuméricos ou "-" seguido de um "." seguido de 1 ou mais caracteres alfanuméricos ou "-" ou ".".
+const regexpTag1 = /<\/?[\w\s="']+\/?>/gi; // Armazena na constante regexpTAG um regexp que irá procurar por 1 ou mais caracteres alfanuméricos ou espaço ou "=" ou "'" seguido de um ">" ou "<" ou "/" ou ">".
 
-// Criado uma constante chamada emails2 armazenando uma array que contém propriedades do tipo string.
-const emails2 = [
-  "email@email.com",
-  "email@email.com.org",
-  "email-email@email.com",
-  "email_email@email.com",
-  "email.email23@email.com.br",
-  "email.email23@empresa-sua.com.br",
-  "c@contato.cc",
-];
-
-// O for of passa por cada item da array emails2 executa o loop a cada passada e armazena o item atual na constante email e assim vai sendo até não ter mais itens na array.
-for (const email of emails2) {
-  console.log(email, email.match(regexpEMAIL2)); // Mostra no console o email atual armazenado na constante e mostra se deu match com o regexp criado para email.
-}
-
-//* > Tag apenas o nome.
-
-const regexpTAG = /(?<=<\/?)[\w]+/gi; // Armazena na constante regexpTAG um regexp que irá procurar por 1 ou mais caracteres alfanuméricos que estejam entre "<" e ">".
-
-// Criado uma constante chamada tags armazenando uma array que contém propriedades do tipo string.
-const tags = [
+// Criado uma constante chamada tags1 armazenando uma array que contém propriedades do tipo string.
+const tags1 = [
   "<div>Isso é uma div</div>",
   '<div class="ativa">Essa está ativa</div>',
   '<img src="imagem" />',
@@ -132,7 +112,27 @@ const tags = [
   "</ul>",
 ];
 
-// O for of passa por cada item da array tags executa o loop a cada passada e armazena o item atual na constante tag e assim vai sendo até não ter mais itens na array.
-for (const tag of tags) {
-  console.log(tag, tag.match(regexpTAG)); // Mostra no console a tag atual armazenado na constante e mostra se deu match com o regexp criado para tag.
+// O for of passa por cada item da array tags1 executa o loop a cada passada e armazena o item atual na constante email e assim vai sendo até não ter mais itens na array.
+for (const tag of tags1) {
+  console.log(tag, tag.match(regexpTag1)); // Mostra no console o tag atual armazenado na constante e mostra se deu match com o regexp criado para tag.
+}
+
+//* > Tag apenas o nome.
+
+const regexpTag2 = /(?<=<\/?)[\w]+/gi; // Armazena na constante regexpTAG um regexp que irá procurar por 1 ou mais caracteres alfanuméricos que estejam entre "<" e ">".
+
+// Criado uma constante chamada tags2 armazenando uma array que contém propriedades do tipo string.
+const tags2 = [
+  "<div>Isso é uma div</div>",
+  '<div class="ativa">Essa está ativa</div>',
+  '<img src="imagem" />',
+  '<img src="imagem">',
+  '<ul class="ativa">',
+  "<li>Essa está ativa</li>",
+  "</ul>",
+];
+
+// O for of passa por cada item da array tags2 executa o loop a cada passada e armazena o item atual na constante tag e assim vai sendo até não ter mais itens na array.
+for (const tag of tags2) {
+  console.log(tag, tag.match(regexpTag2)); // Mostra no console a tag atual armazenado na constante e mostra se deu match com o regexp criado para tag.
 }
