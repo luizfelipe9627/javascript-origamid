@@ -1,0 +1,90 @@
+.titulo {
+  font-family: 'Playfair Display SC', georgia;
+  font-size: 6rem;
+  line-height: 1;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  grid-column: 1 / 4;
+}
+
+.animais-descricao {
+  grid-column: 3;
+}
+
+.animais-descricao section {
+  margin-bottom: 3rem;
+}
+
+.animais h2 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 1rem;
+  color: #E54;
+}
+
+.animais h2::before {
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 10px;
+  margin-right: 10px;
+  background-color: #FB5;
+}
+
+.animais p {
+  font-family: Helvetica, Arial;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.animais-lista {
+  height: 370px;
+  overflow-y: scroll;
+  grid-column: 2;
+}
+
+.animais-lista li {
+  cursor: pointer;
+}
+
+.animais-lista::-webkit-scrollbar {
+  width: 18px;
+}
+
+.animais-lista::-webkit-scrollbar-thumb {
+  background-color: #FB5;
+  border-left: 4px solid #FAF6ED;
+  border-right: 4px solid #FAF6ED;
+}
+
+.animais-lista::-webkit-scrollbar-track {
+  background-color: #FAF6ED;
+}
+
+@media (max-width: 700px) {
+  .animais-lista {
+    grid-column: 1;
+  }
+}
+
+/* Por padrão faz as sections estarem escondidas. */
+.js [data-tab="content"] section {
+  display: none;
+}
+
+/* Quando tiver a classe ativo na section irá mudar o estilo do elemento. */
+[data-tab="content"] section.ativo {
+  display: block;
+}
+
+[data-tab="content"] section.ativo.show-right {
+  /* O forwards é usado para quando acontecer a animação ele continuar no fim da animação. */
+  animation: show-right .5s forwards;
+}
+
+[data-tab="content"] section.ativo.show-bottom {
+  /* O forwards é usado para quando acontecer a animação ele continuar no fim da animação. */
+  animation: show-bottom .5s forwards;
+}

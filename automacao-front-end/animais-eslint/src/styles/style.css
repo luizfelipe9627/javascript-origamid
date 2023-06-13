@@ -1,0 +1,25 @@
+/* Global */
+@import url('./global/global.css');
+@import url('./global/reset.css');
+
+/* Utilidades */
+@import url('./utils/keyframes.css');
+@import url('./utils/modal.css');
+@import url('./utils/tooltip.css');
+@import url('./utils/dropdown.css');
+
+/* Tipografia */
+@import url('./fonts/fonte.css');
+
+
+/* Header */
+@import url('./partials/header.css');
+
+/* Sessões */
+@import url('./partials/animais.css');
+@import url('./partials/faq.css');
+@import url('./partials/contato.css');
+@import url('./partials/numeros.css');
+
+/* Footer */
+@import url('./partials/footer.css');
