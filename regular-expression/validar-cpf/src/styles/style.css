@@ -16,6 +16,25 @@ input {
   font-size: 1em;
 }
 
+input.erro {
+  border-color: red;
+}
+
+input.valid {
+  border-color: green;
+}
+
 input::placeholder {
   color: rgba(0, 0, 0, .2);
+}
+
+.error-text {
+  display: none;
+  font-family: 'IBM Plex Mono';
+  font-size: .875rem;
+  color: red;
+}
+
+.error-text.active {
+  display: block;
 }

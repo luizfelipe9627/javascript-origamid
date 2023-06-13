@@ -22,14 +22,27 @@ export default class validateCPF {
     return this.format(resultCPF); // Retorna o resultCPF formatado.
   }
 
+  // Cria uma function express responsável por validar o CPF e que recebe um CPF como argumento.
   validate(CPF) {
     const matchCPF = CPF.match(/(?:\d{3}[-.\s]?){3}\d{2}/g); // Cria uma constante matchCPF que recebe o retorno da função match que recebe como argumento uma expressão regular que valida o CPF. O match retorna uma array com o resultado da validação.
-    console.log(matchCPF)
-    return (matchCPF[0] === CPF); // Retorna o resultado da comparação entre o primeiro elemento do array matchCPF e o CPF.
+    return matchCPF && matchCPF[0] === CPF; // Retorna um valor boolean com base na verificação do matchCPF ser verdadeiro e se o primeiro item da array é igual ao CPF.
   }
 
   // Cria uma function express responsável por fazer a validação do CPF e que recebe um CPF como argumento.
   handleChange(CPFElement) {
+    // Se o valor do input do CPF chamado de CPFElement for válido executa o bloco de código, se não executa o else.
+    if (this.validate(CPFElement.value)) {
+      CPFElement.value = this.result(CPFElement.value); // O value do CPFElement(input CPF) recebe o retorno da function result que formata o CPF e que recebe como argumento o valor do CPFElement.
+
+      CPFElement.classList.add("valid"); // Adiciona uma classe ao CPFElement(o input CPF).
+      CPFElement.classList.remove("erro"); // Remove a classe do CPFElement(o input CPF).
+      CPFElement.nextElementSibling.classList.remove("active"); // Remove a classe do irmão do CPFElement(o input CPF) no caso o Span.
+    } else {
+      CPFElement.classList.add("erro"); // Adiciona uma classe ao CPFElement(o input CPF).
+      CPFElement.classList.remove("valid"); // Remove a classe do CPFElement(o input CPF).
+      CPFElement.nextElementSibling.classList.add("active"); // Adiciona uma classe ao irmão do CPFElement(o input CPF) no caso o Span
+    }
+
     return this.validate(CPFElement.value); // Retorna o resultado da function validate que recebe como argumento o valor do CPFElement.
   }
 
@@ -41,8 +54,21 @@ export default class validateCPF {
     });
   }
 
+  // Cria uma function express responsável por adicionar uma mensagem de erro no input e que recebe um elemento como argumento.
+  addErrorSpan() {
+    const errorSpan = document.createElement("span"); // Cria uma constante errorSpan que armazena a criação de um elemento HTML.
+    errorSpan.classList.add("error-text"); // Adiciona uma classe ao elemento HTML.
+    errorSpan.innerText = "CPF inválido"; // Adiciona um texto ao elemento HTML.
+
+    this.element.parentElement.insertBefore(
+      errorSpan,
+      this.element.nextSibling
+    ); // O parentElement é o elemento pai do elemento da class e o insertBefore insere o elemento HTML antes do elemento da class.
+  }
+
   init() {
     this.addEvent(); // Chama a function addEvent.
+    this.addErrorSpan(); // Chama a function addErrorSpan.
     return this; // Retorna a própria classe, sem o return irá retornar undefined.
   }
 }
