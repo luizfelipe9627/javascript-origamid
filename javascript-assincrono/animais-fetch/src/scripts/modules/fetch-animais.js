@@ -21,9 +21,8 @@ export default function initFetchAnimais() {
       });
 
       initAnimaNumero(); // Executa a função que anima os números.
-    } 
-    // Caso ocorra qualquer erro no código acima o bloco do catch é executado.
-    catch (erro) {
+    } catch (erro) {
+      // Caso ocorra qualquer erro no código acima o bloco do catch é executado.
       console.log(Error(erro)); // Retorna um erro no console.
     }
   }
@@ -40,8 +39,6 @@ export default function initFetchAnimais() {
     return div; // Retorna a div.
   }
 
-  // Está executando a função e passando como parâmetro o caminho do arquivo json.
-  fetchAnimais(
-    "../../../../../javascript-assincrono/animais-fetch/src/api/animais.json"
-  );
+  // Está executando a função e passando como parâmetro a URL do arquivo json.
+  fetchAnimais("https://luizfelipe9627.github.io/apis/animais.json");
 }
