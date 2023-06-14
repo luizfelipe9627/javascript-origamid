@@ -4,9 +4,8 @@ export default function initFetchBitcoin() {
   // O fetch faz a requisição para a API e quando tiver o status de ok(carregado com sucesso) o then executa.
   fetch("https://blockchain.info/ticker")
     // O parâmetro response é um objeto que possui um corpo com o conteúdo da resposta. Esse corpo pode ser transformado response métodos do protótipo do objeto Response. Estes retornam outras promises.
-    .then((response) => {
-      return response.json(); // Retorna uma promise que tem como PromiseResult a transformação para JSON(objeto) da API.
-    })
+    .then((response) => response.json()) // Retorna uma promise que tem como PromiseResult a transformação para JSON(objeto) da API.
+    
     // O then está acessando o resultado do then anterior(no caso o JSON) e aplicando ao parâmetro bitcoin criado.
     .then((bitcoin) => {
       const btc = document.querySelector(".btc-preco"); // Está puxando do DOM o primeiro elemento que contém a classe btc-preco e armazenando na constante btc.

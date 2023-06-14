@@ -17,12 +17,12 @@ export default function initScrollToSection() {
     });
 
     // * Forma alternativa.
-    const sectionTop = section.offsetTop; // Pega quanto de altura tem do topo da página até o elemento.
+    // const sectionTop = section.offsetTop; // Pega quanto de altura tem do topo da página até o elemento.
 
-    //window.scrollTo({
+    // window.scrollTo({
     //  top: sectionTop, // Leva até a section do item clicado no menu.
     //  behavior: 'smooth', // Anima o scroll.
-    //});
+    // });
   }
 
   // O forEach percorre por cada link do js-menu.

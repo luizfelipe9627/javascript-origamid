@@ -3,7 +3,20 @@ import initAnimaNumero from "./anima-numeros.js"; // O import é usado para cham
 // Função responsável por adicionar os nomes das espécies e total delas.
 // O export é usado para permitir que o código seja usado em outro arquivo JS. O default é geralmente usado para quando tem que exportar somente uma função do mesmo arquivo.
 export default function initFetchAnimais() {
-  // A palavra chave async indica que a função possui partes assíncronas e que você pretende esperar a resolução da mesma antes de continuar.
+  // Função responsável por criar as divs que contém as espécies e o total delas.
+  function createAnimal(animal) {
+    const div = document.createElement("div"); // Criado um elemento div e armazena na constante div.
+    div.classList.add("numero-animal"); // Adiciona uma classe chamada numero-animal na div criada.
+    // Está inserindo um código HTML no elemento div, que é passado cada especie no h3 e o total dela no span de cada uma das divs.
+    div.innerHTML = `
+      <h3>${animal.specie}</h3>
+      <span data-numero>${animal.total}</span>
+    `;
+
+    return div; // Retorna a div.
+  }
+
+  // A palavra chave async indica que a função possui partes assíncronas e que você pretende esperar a resolução da mesma antes de continuar.
   async function fetchAnimais(url) {
     // O try é literalmente "tentar", caso tenha sucesso executa o seu bloco de comando.
     try {
@@ -25,18 +38,6 @@ export default function initFetchAnimais() {
       // Caso ocorra qualquer erro no código acima o bloco do catch é executado.
       console.log(Error(erro)); // Retorna um erro no console.
     }
-  }
-
-  function createAnimal(animal) {
-    const div = document.createElement("div"); // Criado um elemento div e armazena na constante div.
-    div.classList.add("numero-animal"); // Adiciona uma classe chamada numero-animal na div criada.
-    // Está inserindo um código HTML no elemento div, que é passado cada especie no h3 e o total dela no span de cada uma das divs.
-    div.innerHTML = `
-    <h3>${animal.specie}</h3>
-    <span data-numero>${animal.total}</span>
-    `;
-
-    return div; // Retorna a div.
   }
 
   // Está executando a função e passando como parâmetro a URL do arquivo json.
