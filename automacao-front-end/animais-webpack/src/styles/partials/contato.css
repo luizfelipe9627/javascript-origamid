@@ -1,0 +1,54 @@
+.mapa {
+  grid-column: 2;
+}
+
+.dados {
+  grid-column: 3;
+}
+
+.dados li {
+  margin-bottom: 1rem;
+  font-family: Helvetica, Arial;
+}
+
+.dados li::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  margin-right: 10px;
+  background-color: #FB5;
+}
+
+.js [data-semana]::after {
+  display: inline-block;
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-left: 4px;
+}
+
+.js [data-semana].aberto::after {
+  background-color: #3F4;
+  border: 2px solid #000;
+}
+
+.js [data-semana].fechado::after {
+  background-color: #E54;
+  border: 2px solid #000;
+}
+
+.btc-preco {
+  background-color: #3F4;
+  padding: .2rem .5rem;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+@media (max-width: 700px) {
+  .dados,
+  .mapa {
+    grid-column: 1 / -1;
+  }
+}
