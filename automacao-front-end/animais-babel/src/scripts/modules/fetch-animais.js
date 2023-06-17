@@ -41,5 +41,5 @@ export default function initFetchAnimais() {
   }
 
   // Está executando a função e passando como parâmetro a URL do arquivo json.
-  fetchAnimais("https://luizfelipe9627.github.io/apis/animais.json");
+  fetchAnimais("../../../../../automacao-front-end/animais-babel/src/api/animais.json");
 }
